@@ -1,0 +1,12 @@
+metric,value
+n_questions,30.0
+baseline_tool_call_rate,0.9333333333333333
+baseline_necessity_action_mismatch_rate,0.5
+baseline_action_accuracy,0.9333333333333333
+cognition_low_confidence_count,9.0
+among_low_confidence_tool_called_rate,1.0
+cognition_action_mismatch_rate,0.6333333333333333
+cognition_necessity_mismatch_rate,0.26666666666666666
+intervention_tool_call_rate,0.5666666666666667
+intervention_necessity_action_mismatch_rate,0.26666666666666666
+intervention_action_accuracy,0.8333333333333334

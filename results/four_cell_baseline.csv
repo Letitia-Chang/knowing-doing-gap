@@ -1,0 +1,5 @@
+outcome,count
+Needed tool + called tool,13
+Needed tool + did NOT call tool,0
+No tool needed + DID call tool,15
+No tool needed + no tool called,2

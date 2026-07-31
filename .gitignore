@@ -1,0 +1,21 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# OS/editor files
+.DS_Store
+__MACOSX/
+.vscode/
+.idea/
+
+# Experiment raw logs can be regenerated and may be noisy
+results/raw_*.json
+results/questions_selected.json

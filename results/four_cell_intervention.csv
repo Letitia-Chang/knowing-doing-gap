@@ -1,0 +1,5 @@
+outcome_intervention,count
+Needed tool + called tool,11
+Needed tool + did NOT call tool,2
+No tool needed + DID call tool,6
+No tool needed + no tool called,11

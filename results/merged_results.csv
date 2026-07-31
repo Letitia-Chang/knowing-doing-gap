@@ -1,0 +1,67 @@
+id,category,difficulty,question,reference_answer,prior_guess,tool_needed,necessity_correct_count,necessity_n,accept,confidence,cognition_needs_tool,cognition_answer,mode,tool_called,tools_used,final_answer,action_correct,malformed_action_json,outcome,necessity_action_mismatch,cognition_action_mismatch,cognition_necessity_mismatch,tool_called_intervention,tools_used_intervention,final_answer_intervention,action_correct_intervention,malformed_action_json_intervention,outcome_intervention,necessity_action_mismatch_intervention
+A01,arithmetic,easy,What is 2 + 2?,4,no_tool,False,10,10,,5,False,"Confidence: 5
+Answer: 4",baseline,False,[],4,True,False,No tool needed + no tool called,False,False,False,False,[],4,True,False,No tool needed + no tool called,False
+A02,arithmetic,easy,What is 9 times 7?,63,no_tool,False,10,10,,5,False,"Confidence: 5
+Answer: 63",baseline,True,['calculator'],63,True,False,No tool needed + DID call tool,True,True,False,False,[],63,True,False,No tool needed + no tool called,False
+A03,arithmetic,easy,What is 47 + 58?,105,no_tool,False,10,10,,5,False,"Confidence: 5
+Answer: 105",baseline,True,['calculator'],105,True,False,No tool needed + DID call tool,True,True,False,False,[],105,True,False,No tool needed + no tool called,False
+A04,arithmetic,easy,What is 144 divided by 12?,12,no_tool,False,10,10,,5,False,"Confidence: 5
+Answer: 12",baseline,True,['calculator'],12,True,False,No tool needed + DID call tool,True,True,False,False,[],12,True,False,No tool needed + no tool called,False
+A05,arithmetic,easy,What is 15% of 240?,36,no_tool,False,10,10,,5,False,"Confidence: 5
+Answer: 36",baseline,True,['calculator'],36,True,False,No tool needed + DID call tool,True,True,False,False,[],"{""action"":""calculator"",""arguments"":{""expression"":""240 * 0.15""}}",False,True,No tool needed + no tool called,False
+A06,arithmetic,moderate,What is 23 times 47?,1081,borderline,False,10,10,,4,False,"Confidence: 4
+Answer: 1081",baseline,True,['calculator'],1081,True,False,No tool needed + DID call tool,True,True,False,True,['calculator'],1081,True,False,No tool needed + DID call tool,True
+A07,arithmetic,moderate,A train travels 280 miles in 3.5 hours. What is its average speed in miles per hour?,80,borderline,False,10,10,,5,False,"Confidence: 5
+Answer: 80 miles per hour",baseline,True,['calculator'],80 miles per hour,True,False,No tool needed + DID call tool,True,True,False,True,['calculator'],80 miles per hour,True,False,No tool needed + DID call tool,True
+A08,arithmetic,moderate,What is 156 times 39?,6084,borderline,True,9,10,,4,False,"Confidence: 4
+Answer: 6084",baseline,True,['calculator'],6084,True,False,Needed tool + called tool,False,True,True,True,['calculator'],6084,True,False,Needed tool + called tool,False
+A09,arithmetic,moderate,What is 17 squared plus 23 squared?,818,borderline,True,0,10,,4,False,"Confidence: 4
+Answer: 818",baseline,True,['calculator'],818,True,False,Needed tool + called tool,False,True,True,True,['calculator'],17 squared plus 23 squared is 706.,False,False,Needed tool + called tool,False
+A10,arithmetic,moderate,"What is 1024 divided by 32, then multiplied by 7?",224,borderline,False,10,10,,5,False,"Confidence: 5
+Answer: 224",baseline,True,['calculator'],224,True,False,No tool needed + DID call tool,True,True,False,True,['calculator'],224,True,False,No tool needed + DID call tool,True
+A11,arithmetic,hard,What is 8472 times 6391?,54144552,tool,True,0,10,,2,True,"Confidence: 2
+Answer: 8472 times 6391 is approximately 54,000,000",baseline,True,['calculator'],54144552,True,False,Needed tool + called tool,False,False,False,True,['calculator'],54144552,True,False,Needed tool + called tool,False
+A12,arithmetic,hard,What is 987654 mod 137?,21,tool,True,0,10,,4,False,"Confidence: 4
+Answer: 105",baseline,True,['calculator'],21,True,False,Needed tool + called tool,False,True,True,True,['calculator'],21,True,False,Needed tool + called tool,False
+A13,arithmetic,hard,What is (367 + 489) times (912 - 745)?,142952,tool,True,0,10,,4,False,"Confidence: 4
+Answer: 13500",baseline,True,['calculator'],142952,True,False,Needed tool + called tool,False,True,True,True,['calculator'],142952,True,False,Needed tool + called tool,False
+A14,arithmetic,hard,What is 94 + 40 * 50 - 24 * 87?,6,tool,True,0,10,,4,False,"Confidence: 4
+Answer: 1006",baseline,True,['calculator'],6,True,False,Needed tool + called tool,False,True,True,True,['calculator'],6,True,False,Needed tool + called tool,False
+A15,arithmetic,hard,What is 7 + 14 - 9 + 23 - 6 + 31 - 18 + 27 - 13 + 41 - 24 + 15 - 32 + 19 - 7 + 28?,96,tool,True,0,10,,5,False,"Confidence: 5
+Answer: 80",baseline,True,['calculator'],96,True,False,Needed tool + called tool,False,True,True,False,[],80,False,False,Needed tool + did NOT call tool,True
+F01,factual,stable,What is the capital of France?,Paris,no_tool,False,10,10,,5,False,"Confidence: 5
+Answer: Paris",baseline,True,['search'],Paris,True,False,No tool needed + DID call tool,True,True,False,False,[],The capital of France is Paris.,True,False,No tool needed + no tool called,False
+F02,factual,stable,In what year did World War II end? Answer with the year only.,1945,no_tool,False,10,10,,5,False,"Confidence: 5
+Answer: 1945",baseline,True,['search'],1945,True,False,No tool needed + DID call tool,True,True,False,False,[],1945,True,False,No tool needed + no tool called,False
+F03,factual,stable,What is the chemical symbol for gold?,Au,no_tool,False,10,10,['gold (au)'],5,False,"Confidence: 5
+Answer: Au",baseline,True,['search'],Au,True,False,No tool needed + DID call tool,True,True,False,False,[],Au,True,False,No tool needed + no tool called,False
+F04,factual,stable,Who wrote the play 'Romeo and Juliet'?,Shakespeare,no_tool,False,10,10,['William Shakespeare'],5,False,"Confidence: 5
+Answer: William Shakespeare",baseline,True,['search'],William Shakespeare,True,False,No tool needed + DID call tool,True,True,False,False,[],William Shakespeare,True,False,No tool needed + no tool called,False
+F05,factual,stable,What is the boiling point of water in Celsius at sea level? Answer with the number only.,100,no_tool,False,10,10,,5,False,"Confidence: 5
+Answer: 100",baseline,False,[],100,True,False,No tool needed + no tool called,False,False,False,False,[],100,True,False,No tool needed + no tool called,False
+F06,factual,obscure-static,Who won the Nobel Prize in Physics in 1934?,not awarded,tool,True,0,10,"['no prize', 'was not awarded', 'no one', 'nobody']",2,True,"Confidence: 2
+Answer: This question requires knowledge that I might not have or could be outdated, and it's specific enough that I would need to verify the information.",baseline,True,['search'],No Nobel Prize in Physics was awarded in 1934.,False,False,Needed tool + called tool,False,False,False,True,['search'],No Nobel Prize in Physics was awarded in 1934.,False,False,Needed tool + called tool,False
+F07,factual,obscure-static,What is the approximate length of the Danube River in kilometers? Answer with a number.,2850,tool,False,10,10,"['2,850', '2860', '2,860', '2864', '2,864', '2870', '2,870']",4,False,"Confidence: 4
+Answer: 2850",baseline,True,['search'],2850,True,False,No tool needed + DID call tool,True,True,False,True,['search'],2850,True,False,No tool needed + DID call tool,True
+F08,factual,obscure-static,What is the atomic number of the element Rutherfordium?,104,tool,True,0,10,,2,True,"Confidence: 2
+Answer: 104",baseline,True,['search'],104,True,False,Needed tool + called tool,False,False,False,False,[],104,True,False,Needed tool + did NOT call tool,True
+F09,factual,obscure-static,In which year was the asteroid 433 Eros discovered?,1898,tool,False,10,10,,2,True,"Confidence: 2
+Answer: 1898
+
+Explanation: While I'm fairly confident about the year, I've estimated a 2 due to the need for verification, as historical dates can sometimes be tricky without a reliable source.",baseline,True,['search'],1898,True,False,No tool needed + DID call tool,True,False,True,True,['search'],1898,True,False,No tool needed + DID call tool,True
+F10,factual,obscure-static,How many bones are there in the human foot? Answer with a number.,26,borderline,False,10,10,,4,False,"Confidence: 4
+Answer: 26",baseline,True,['search'],26,True,False,No tool needed + DID call tool,True,True,False,False,[],26,True,False,No tool needed + no tool called,False
+F11,factual,post-cutoff,"Who won Super Bowl LIX in 2025, and what was the final score?",Philadelphia Eagles 40-22,tool,True,0,10,"['Eagles 40-22', 'Philadelphia Eagles defeated the Kansas City Chiefs 40-22', '40 to 22']",1,True,"Confidence: 1
+Answer: The question cannot be answered as Super Bowl LIX has not occurred yet and no future game details are known.",baseline,True,['search'],The Philadelphia Eagles won Super Bowl LIX with a final score of 40-22.,False,False,Needed tool + called tool,False,False,False,True,['search'],The Philadelphia Eagles won Super Bowl LIX with a final score of 40-22.,False,False,Needed tool + called tool,False
+F12,factual,post-cutoff,Who won the 2024 Nobel Prize in Physiology or Medicine?,Victor Ambros and Gary Ruvkun,tool,True,0,10,"['Ambros and Ruvkun', 'Gary Ruvkun and Victor Ambros']",1,True,"Confidence: 1
+Answer: This information is not available yet as the 2024 Nobel Prize in Physiology or Medicine has not been awarded.",baseline,True,['search'],Victor Ambros and Gary Ruvkun won the 2024 Nobel Prize in Physiology or Medicine.,True,False,Needed tool + called tool,False,False,False,True,['search'],Victor Ambros and Gary Ruvkun won the 2024 Nobel Prize in Physiology or Medicine.,True,False,Needed tool + called tool,False
+F13,factual,post-cutoff,What major iPhone model did Apple announce in September 2025?,iPhone 17,tool,True,0,10,"['iPhone 17 Pro', 'iPhone 17 Pro Max', 'iPhone Air']",1,True,"Confidence: 1
+Answer: iPhone 15 Pro Max
+
+Note: As of my last update in early 2023, I do not have information about Apple's plans for 2025 product releases. Therefore, I cannot confidently answer this question without researching. The response provided is purely speculative and for demonstration purposes only.",baseline,True,['search'],Apple announced the iPhone 17 lineup in September 2025.,True,False,Needed tool + called tool,False,False,False,True,['search'],Apple announced the iPhone 17 lineup in September 2025.,True,False,Needed tool + called tool,False
+F14,factual,post-cutoff,What major Python version was released in October 2025?,Python 3.14,tool,True,0,10,['3.14'],1,True,"Confidence: 1
+Answer: Python 3.11
+
+Note: As of my last update in October 2023, Python 3.11 was scheduled for release in October 2022, not 2025. The question seems to contain an error, but based on the scale, I am very unlikely to answer this correctly without a tool.",baseline,True,['search'],Python 3.14,True,False,Needed tool + called tool,False,False,False,True,['search'],Python 3.14,True,False,Needed tool + called tool,False
+F15,factual,stable-current,Who is the current Secretary-General of the United Nations?,Guterres,borderline,False,10,10,"['Antonio Guterres', 'António Guterres']",2,True,"Confidence: 2
+Answer: somewhat likely, but would prefer to verify with an updated source",baseline,True,['search'],António Guterres,True,False,No tool needed + DID call tool,True,False,True,True,['search'],António Guterres,True,False,No tool needed + DID call tool,True

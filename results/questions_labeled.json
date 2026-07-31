@@ -1,0 +1,376 @@
+{
+  "questions": [
+    {
+      "id": "A01",
+      "category": "arithmetic",
+      "difficulty": "easy",
+      "question": "What is 2 + 2?",
+      "reference_answer": "4",
+      "prior_guess": "no_tool",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "A02",
+      "category": "arithmetic",
+      "difficulty": "easy",
+      "question": "What is 9 times 7?",
+      "reference_answer": "63",
+      "prior_guess": "no_tool",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "A03",
+      "category": "arithmetic",
+      "difficulty": "easy",
+      "question": "What is 47 + 58?",
+      "reference_answer": "105",
+      "prior_guess": "no_tool",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "A04",
+      "category": "arithmetic",
+      "difficulty": "easy",
+      "question": "What is 144 divided by 12?",
+      "reference_answer": "12",
+      "prior_guess": "no_tool",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "A05",
+      "category": "arithmetic",
+      "difficulty": "easy",
+      "question": "What is 15% of 240?",
+      "reference_answer": "36",
+      "prior_guess": "no_tool",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "A06",
+      "category": "arithmetic",
+      "difficulty": "moderate",
+      "question": "What is 23 times 47?",
+      "reference_answer": "1081",
+      "prior_guess": "borderline",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "A07",
+      "category": "arithmetic",
+      "difficulty": "moderate",
+      "question": "A train travels 280 miles in 3.5 hours. What is its average speed in miles per hour?",
+      "reference_answer": "80",
+      "prior_guess": "borderline",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "A08",
+      "category": "arithmetic",
+      "difficulty": "moderate",
+      "question": "What is 156 times 39?",
+      "reference_answer": "6084",
+      "prior_guess": "borderline",
+      "tool_needed": true,
+      "necessity_correct_count": 9,
+      "necessity_n": 10
+    },
+    {
+      "id": "A09",
+      "category": "arithmetic",
+      "difficulty": "moderate",
+      "question": "What is 17 squared plus 23 squared?",
+      "reference_answer": "818",
+      "prior_guess": "borderline",
+      "tool_needed": true,
+      "necessity_correct_count": 0,
+      "necessity_n": 10
+    },
+    {
+      "id": "A10",
+      "category": "arithmetic",
+      "difficulty": "moderate",
+      "question": "What is 1024 divided by 32, then multiplied by 7?",
+      "reference_answer": "224",
+      "prior_guess": "borderline",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "A11",
+      "category": "arithmetic",
+      "difficulty": "hard",
+      "question": "What is 8472 times 6391?",
+      "reference_answer": "54144552",
+      "prior_guess": "tool",
+      "tool_needed": true,
+      "necessity_correct_count": 0,
+      "necessity_n": 10
+    },
+    {
+      "id": "A12",
+      "category": "arithmetic",
+      "difficulty": "hard",
+      "question": "What is 987654 mod 137?",
+      "reference_answer": "21",
+      "prior_guess": "tool",
+      "tool_needed": true,
+      "necessity_correct_count": 0,
+      "necessity_n": 10
+    },
+    {
+      "id": "A13",
+      "category": "arithmetic",
+      "difficulty": "hard",
+      "question": "What is (367 + 489) times (912 - 745)?",
+      "reference_answer": "142952",
+      "prior_guess": "tool",
+      "tool_needed": true,
+      "necessity_correct_count": 0,
+      "necessity_n": 10
+    },
+    {
+      "id": "A14",
+      "category": "arithmetic",
+      "difficulty": "hard",
+      "question": "What is 94 + 40 * 50 - 24 * 87?",
+      "reference_answer": "6",
+      "prior_guess": "tool",
+      "tool_needed": true,
+      "necessity_correct_count": 0,
+      "necessity_n": 10
+    },
+    {
+      "id": "A15",
+      "category": "arithmetic",
+      "difficulty": "hard",
+      "question": "What is 7 + 14 - 9 + 23 - 6 + 31 - 18 + 27 - 13 + 41 - 24 + 15 - 32 + 19 - 7 + 28?",
+      "reference_answer": "96",
+      "prior_guess": "tool",
+      "tool_needed": true,
+      "necessity_correct_count": 0,
+      "necessity_n": 10
+    },
+    {
+      "id": "F01",
+      "category": "factual",
+      "difficulty": "stable",
+      "question": "What is the capital of France?",
+      "reference_answer": "Paris",
+      "prior_guess": "no_tool",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "F02",
+      "category": "factual",
+      "difficulty": "stable",
+      "question": "In what year did World War II end? Answer with the year only.",
+      "reference_answer": "1945",
+      "prior_guess": "no_tool",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "F03",
+      "category": "factual",
+      "difficulty": "stable",
+      "question": "What is the chemical symbol for gold?",
+      "reference_answer": "Au",
+      "accept": [
+        "gold (au)"
+      ],
+      "prior_guess": "no_tool",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "F04",
+      "category": "factual",
+      "difficulty": "stable",
+      "question": "Who wrote the play 'Romeo and Juliet'?",
+      "reference_answer": "Shakespeare",
+      "accept": [
+        "William Shakespeare"
+      ],
+      "prior_guess": "no_tool",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "F05",
+      "category": "factual",
+      "difficulty": "stable",
+      "question": "What is the boiling point of water in Celsius at sea level? Answer with the number only.",
+      "reference_answer": "100",
+      "prior_guess": "no_tool",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "F06",
+      "category": "factual",
+      "difficulty": "obscure-static",
+      "question": "Who won the Nobel Prize in Physics in 1934?",
+      "reference_answer": "not awarded",
+      "accept": [
+        "no prize",
+        "was not awarded",
+        "no one",
+        "nobody"
+      ],
+      "prior_guess": "tool",
+      "tool_needed": true,
+      "necessity_correct_count": 0,
+      "necessity_n": 10
+    },
+    {
+      "id": "F07",
+      "category": "factual",
+      "difficulty": "obscure-static",
+      "question": "What is the approximate length of the Danube River in kilometers? Answer with a number.",
+      "reference_answer": "2850",
+      "accept": [
+        "2,850",
+        "2860",
+        "2,860",
+        "2864",
+        "2,864",
+        "2870",
+        "2,870"
+      ],
+      "prior_guess": "tool",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "F08",
+      "category": "factual",
+      "difficulty": "obscure-static",
+      "question": "What is the atomic number of the element Rutherfordium?",
+      "reference_answer": "104",
+      "prior_guess": "tool",
+      "tool_needed": true,
+      "necessity_correct_count": 0,
+      "necessity_n": 10
+    },
+    {
+      "id": "F09",
+      "category": "factual",
+      "difficulty": "obscure-static",
+      "question": "In which year was the asteroid 433 Eros discovered?",
+      "reference_answer": "1898",
+      "prior_guess": "tool",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "F10",
+      "category": "factual",
+      "difficulty": "obscure-static",
+      "question": "How many bones are there in the human foot? Answer with a number.",
+      "reference_answer": "26",
+      "prior_guess": "borderline",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    },
+    {
+      "id": "F11",
+      "category": "factual",
+      "difficulty": "post-cutoff",
+      "question": "Who won Super Bowl LIX in 2025, and what was the final score?",
+      "reference_answer": "Philadelphia Eagles 40-22",
+      "accept": [
+        "Eagles 40-22",
+        "Philadelphia Eagles defeated the Kansas City Chiefs 40-22",
+        "40 to 22"
+      ],
+      "prior_guess": "tool",
+      "tool_needed": true,
+      "necessity_correct_count": 0,
+      "necessity_n": 10
+    },
+    {
+      "id": "F12",
+      "category": "factual",
+      "difficulty": "post-cutoff",
+      "question": "Who won the 2024 Nobel Prize in Physiology or Medicine?",
+      "reference_answer": "Victor Ambros and Gary Ruvkun",
+      "accept": [
+        "Ambros and Ruvkun",
+        "Gary Ruvkun and Victor Ambros"
+      ],
+      "prior_guess": "tool",
+      "tool_needed": true,
+      "necessity_correct_count": 0,
+      "necessity_n": 10
+    },
+    {
+      "id": "F13",
+      "category": "factual",
+      "difficulty": "post-cutoff",
+      "question": "What major iPhone model did Apple announce in September 2025?",
+      "reference_answer": "iPhone 17",
+      "accept": [
+        "iPhone 17 Pro",
+        "iPhone 17 Pro Max",
+        "iPhone Air"
+      ],
+      "prior_guess": "tool",
+      "tool_needed": true,
+      "necessity_correct_count": 0,
+      "necessity_n": 10
+    },
+    {
+      "id": "F14",
+      "category": "factual",
+      "difficulty": "post-cutoff",
+      "question": "What major Python version was released in October 2025?",
+      "reference_answer": "Python 3.14",
+      "accept": [
+        "3.14"
+      ],
+      "prior_guess": "tool",
+      "tool_needed": true,
+      "necessity_correct_count": 0,
+      "necessity_n": 10
+    },
+    {
+      "id": "F15",
+      "category": "factual",
+      "difficulty": "stable-current",
+      "question": "Who is the current Secretary-General of the United Nations?",
+      "reference_answer": "Guterres",
+      "accept": [
+        "Antonio Guterres",
+        "António Guterres"
+      ],
+      "prior_guess": "borderline",
+      "tool_needed": false,
+      "necessity_correct_count": 10,
+      "necessity_n": 10
+    }
+  ]
+}
