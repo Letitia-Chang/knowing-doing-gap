@@ -1,6 +1,6 @@
 # The Knowing-Doing Gap: Does an LLM Know It Needs a Tool?
 
-A behavioral probing experiment measuring the gap between what an LLM *believes* about its own capability and what it *does* when tools are available, replicated on **Qwen/Qwen2.5-7B-Instruct-Turbo** via TogetherAI.
+A behavioral probing experiment measuring the gap between what an LLM *believes* about its own capability and what it *does* when tools are available. This is a black-box, behavioral adaptation of the paper's tool-necessity test, run on **Qwen/Qwen2.5-7B-Instruct-Turbo** via TogetherAI.
 
 Based on: Cheng, Fan, JafariRaviz, Rezaei, Feizi — ["Model-Adaptive Tool Necessity Reveals the Knowing-Doing Gap in LLM Tool Use"](https://arxiv.org/abs/2605.14038), 2026.
 
@@ -33,6 +33,12 @@ Qwen2.5-7B-Instruct calls a tool on 28 of 30 questions — including most of the
   <img src="results/figures/baseline_four_cell_outcomes.png" width="45%" alt="Baseline four-cell outcomes">
   <img src="results/figures/baseline_vs_intervention_mismatch.png" width="45%" alt="Baseline vs intervention mismatch rate">
 </p>
+
+## How this differs from the paper
+
+- **Behavioral only.** The paper also probes hidden states to show the model internally "knows" it needs a tool. This project measures behavior through the API (repeated no-tool runs, self-reported confidence, actual tool calls) and does no hidden-state probing.
+- **One model, small question set.** 30 questions on a single model, versus the paper's larger multi-model study.
+- **Own intervention.** The one-line system-prompt intervention is my addition, not part of the original paper.
 
 ## Repository structure
 
