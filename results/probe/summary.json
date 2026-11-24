@@ -398,6 +398,29 @@
       }
     ]
   },
+  "probe_layer_highlights": {
+    "all": {
+      "layer0": 0.5,
+      "layer1": 0.8119335770606995,
+      "peak": 0.9042695760726928,
+      "peak_layer": 24,
+      "final": 0.9001116156578064
+    },
+    "arithmetic": {
+      "layer0": 0.5,
+      "layer1": 0.9455673098564148,
+      "peak": 0.9631989598274232,
+      "peak_layer": 14,
+      "final": 0.9622422456741332
+    },
+    "factual": {
+      "layer0": 0.5,
+      "layer1": 0.5900620222091675,
+      "peak": 0.8178255558013916,
+      "peak_layer": 24,
+      "final": 0.8116908073425293
+    }
+  },
   "probe_label_sensitivity": {
     "_acc80": {
       "auroc": 0.9085912108421326,

@@ -19,6 +19,14 @@ On the original 30 questions, local-bf16 labels agree with the TogetherAI-Turbo 
 | factual | last_token | 500 (295) | 0.814 [0.774, 0.852] | 0.752 [0.714, 0.790] | 0.496 | 0.555 | 0.509 | L25 (7), L28 (5), L24 (2) |
 | all | mean_pool | 1000 (608) | 0.883 [0.862, 0.901] | 0.800 [0.773, 0.825] | 0.486 | 0.746 | 0.779 | L19 (9), L13 (2), L14 (1) |
 
+Per-layer out-of-fold AUROC, last-token probe (layer 0 = embeddings; the peak is optimistic because it is picked on the same curve):
+
+| Scope | Layer 0 | Layer 1 | Peak (layer) | Final layer |
+|---|--:|--:|--:|--:|
+| all | 0.500 | 0.812 | 0.904 (L24) | 0.900 |
+| arithmetic | 0.500 | 0.946 | 0.963 (L14) | 0.962 |
+| factual | 0.500 | 0.590 | 0.818 (L24) | 0.812 |
+
 Label-threshold sensitivity (pooled scope, last-token probe): tool_needed = accuracy < 80% -> nested AUROC 0.909 [0.891, 0.924]; tool_needed = accuracy < 50% -> nested AUROC 0.906 [0.888, 0.923]
 
 ### Probe-predicted need vs actual tool calls (out-of-fold probe, threshold 0.5)

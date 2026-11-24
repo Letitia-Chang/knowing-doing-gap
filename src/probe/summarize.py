@@ -86,6 +86,20 @@ def main() -> None:
             lines.append(f"| {r['scope']} | {r['feature']} | {r['n']} ({r['n_needed']}) | {ci(r['nested'])} | {ci(r['nested'], 'bal_acc')} | "
                          f"{np.mean(r['null_nested_auroc']):.3f} | {b['surface_logreg']['auroc']:.3f} | {b['surface_gboost']['auroc']:.3f} | "
                          f"{', '.join(f'L{k} ({v})' for k, v in top)} |")
+        curve_path = out / "probe_layer_curve.csv"
+        if curve_path.exists():
+            curve = pd.read_csv(curve_path)
+            hi, hl = {}, ["", "Per-layer out-of-fold AUROC, last-token probe (layer 0 = embeddings; the peak is optimistic because it is picked on the same curve):", "",
+                          "| Scope | Layer 0 | Layer 1 | Peak (layer) | Final layer |", "|---|--:|--:|--:|--:|"]
+            for scope in ("all", "arithmetic", "factual"):
+                d = curve[(curve.scope == scope) & (curve.feature == "last_token")].sort_values("layer")
+                if d.empty:
+                    continue
+                pk = d.loc[d.auroc.idxmax()]
+                hi[scope] = {"layer0": float(d.auroc.iloc[0]), "layer1": float(d.auroc.iloc[1]), "peak": float(pk.auroc), "peak_layer": int(pk.layer), "final": float(d.auroc.iloc[-1])}
+                hl.append(f"| {scope} | {hi[scope]['layer0']:.3f} | {hi[scope]['layer1']:.3f} | {hi[scope]['peak']:.3f} (L{hi[scope]['peak_layer']}) | {hi[scope]['final']:.3f} |")
+            S["probe_layer_highlights"] = hi
+            lines += hl
         sens = {}
         for t in SENSITIVITY_THRESHOLDS[1:]:
             tag = f"_acc{int(round(t * 100))}"
