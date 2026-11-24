@@ -28,12 +28,12 @@ Label-threshold sensitivity (pooled scope, last-token probe): tool_needed = accu
 | baseline | 1000 | 95.5% | 585 | 23 | 370 | 22 |
 | intervention | 1000 | 60.7% | 442 | 166 | 165 | 227 |
 
-| Prompt | Probe cell: knows & does | knows, doesn't | not-needed & does | neither | Over-use items where probe says NOT needed | Needed+not-called items where probe says needed |
-|---|--:|--:|--:|--:|---|---|
-| baseline | 552 | 18 | 403 | 27 | 81% [77%, 85%] (n=370) | 65% [43%, 83%] (n=23) |
-| intervention | 439 | 122 | 168 | 271 | 75% [68%, 81%] (n=165) | 56% [48%, 63%] (n=166) |
+| Prompt | Probe cell: knows & does | knows, doesn't | not-needed & does | neither | Probe says NOT needed: over-use items | ...not-needed & not-called items | ...ALL not-needed items | Probe says needed: needed & not-called items |
+|---|--:|--:|--:|--:|---|---|---|---|
+| baseline | 552 | 18 | 403 | 27 | 81% [77%, 85%] (n=370) | 86% [73%, 100%] (n=22) | 81% [77%, 85%] (n=392) | 65% [43%, 83%] (n=23) |
+| intervention | 439 | 122 | 168 | 271 | 75% [68%, 81%] (n=165) | 87% [83%, 92%] (n=227) | 82% [78%, 86%] (n=392) | 56% [48%, 63%] (n=166) |
 
-Probe score vs behaviour: baseline: AUROC(probe, tool_needed)=0.900, AUROC(probe, tool_called)=0.623, ECE=0.043; intervention: AUROC(probe, tool_needed)=0.901, AUROC(probe, tool_called)=0.786, ECE=0.051
+Probe score vs behaviour: baseline: AUROC(probe, tool_needed)=0.900, AUROC(probe, tool_called)=0.623 (within not-needed only 0.508, within needed only 0.709), ECE=0.043; intervention: AUROC(probe, tool_needed)=0.901, AUROC(probe, tool_called)=0.786 (within not-needed only 0.628, within needed only 0.827), ECE=0.051
 
 ### Same questions, two prompts (secondary)
 

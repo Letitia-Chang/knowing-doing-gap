@@ -50,6 +50,18 @@
       "hi": 0.9162995594713657
     }
   },
+  "not_needed_all": {
+    "definition": "tool_needed=0 (called or not)",
+    "n": 392,
+    "probe_says_not_needed": {
+      "n": 392,
+      "rate": 0.8214285714285714,
+      "lo": 0.7831632653061225,
+      "hi": 0.8571428571428571
+    }
+  },
+  "auroc_probe_vs_tool_called_within_not_needed": 0.6284341209451342,
+  "auroc_probe_vs_tool_called_within_needed": 0.8268549310363627,
   "auroc_probe_vs_tool_needed": 0.9008836264769066,
   "auroc_probe_vs_tool_called": 0.7857187771168429,
   "ece_vs_tool_needed": 0.05060058357199999,

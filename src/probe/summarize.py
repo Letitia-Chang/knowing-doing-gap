@@ -113,14 +113,16 @@ def main() -> None:
             pq = pd.read_csv(out / f"knowing_doing_per_question{'' if name == 'baseline' else '_intervention'}.csv")
             nn, cc = pq.tool_needed.astype(bool), pq.tool_called.astype(bool)
             lines.append(f"| {name} | {kd['n']} | {kd['tool_call_rate']:.1%} | {int((nn & cc).sum())} | {int((nn & ~cc).sum())} | {int((~nn & cc).sum())} | {int((~nn & ~cc).sum())} |")
-        lines += ["", "| Prompt | Probe cell: knows & does | knows, doesn't | not-needed & does | neither | Over-use items where probe says NOT needed | Needed+not-called items where probe says needed |",
-                  "|---|--:|--:|--:|--:|---|---|"]
+        lines += ["", "| Prompt | Probe cell: knows & does | knows, doesn't | not-needed & does | neither | Probe says NOT needed: over-use items | ...not-needed & not-called items | ...ALL not-needed items | Probe says needed: needed & not-called items |",
+                  "|---|--:|--:|--:|--:|---|---|---|---|"]
         for name, kd in kd_runs.items():
             fc = kd["four_cell_counts"]
             lines.append(f"| {name} | {fc['knows_does']} | {fc['knows_doesnt']} | {fc['unneeded_does']} | {fc['neither']} | "
-                         f"{pct(kd['over_use']['probe_says_not_needed'])} | {pct(kd['under_use']['probe_says_needed'])} |")
+                         f"{pct(kd['over_use']['probe_says_not_needed'])} | {pct(kd['not_needed_and_not_called']['probe_says_not_needed'])} | "
+                         f"{pct(kd['not_needed_all']['probe_says_not_needed'])} | {pct(kd['under_use']['probe_says_needed'])} |")
         lines += ["", "Probe score vs behaviour: " + "; ".join(
-            f"{n}: AUROC(probe, tool_needed)={kd['auroc_probe_vs_tool_needed']:.3f}, AUROC(probe, tool_called)={kd['auroc_probe_vs_tool_called']:.3f}, ECE={kd['ece_vs_tool_needed']:.3f}" for n, kd in kd_runs.items())]
+            f"{n}: AUROC(probe, tool_needed)={kd['auroc_probe_vs_tool_needed']:.3f}, AUROC(probe, tool_called)={kd['auroc_probe_vs_tool_called']:.3f} "
+            f"(within not-needed only {kd['auroc_probe_vs_tool_called_within_not_needed']:.3f}, within needed only {kd['auroc_probe_vs_tool_called_within_needed']:.3f}), ECE={kd['ece_vs_tool_needed']:.3f}" for n, kd in kd_runs.items())]
 
     # --- baseline vs intervention (secondary) -------------------------------
     if len(kd_runs) == 2:

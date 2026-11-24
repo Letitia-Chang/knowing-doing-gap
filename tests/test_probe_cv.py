@@ -103,6 +103,11 @@ def test_analyse_counts_and_overuse_subset():
     assert s["over_use"]["probe_says_not_needed"]["rate"] == pytest.approx(2 / 3)  # c, d yes; f no
     assert s["under_use"]["n"] == 2 and eight.n.iloc[:8].sum() >= 8
     assert eight[eight.category == "all"].n.sum() == 8
+    # Control added after seeing results: compare over-use with ALL not-needed items.
+    assert s["not_needed_all"]["n"] == 4 and s["not_needed_all"]["probe_says_not_needed"]["rate"] == pytest.approx(3 / 4)  # c, d, g yes; f no
+    # within not-needed (c,d,f,g): called = T,T,T,F; p = .2,.1,.6,.4 -> the one not-called item (g, p=.4) outranks d but not f
+    assert s["auroc_probe_vs_tool_called_within_not_needed"] == pytest.approx(1 / 3)
+    assert 0 <= s["auroc_probe_vs_tool_called_within_needed"] <= 1
     assert cal.n.sum() == 8
 
 

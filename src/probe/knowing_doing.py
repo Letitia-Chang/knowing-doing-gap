@@ -87,6 +87,13 @@ def analyse(df: pd.DataFrame) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
         "under_use": {"definition": "tool_needed=1 and tool_called=0", "n": int(under_use.sum()),
                       "probe_says_needed": bootstrap_rate(probe_needed[under_use])},
         "not_needed_and_not_called": {"n": int((~needed & ~called).sum()), "probe_says_not_needed": bootstrap_rate(~probe_needed[~needed & ~called])},
+        # Added after first seeing the results: "the probe says not-needed on X% of over-use items" is only
+        # meaningful next to the same rate over ALL not-needed items (the probe's specificity), and next to
+        # whether the probe score separates called from not-called questions *within* a necessity class.
+        "not_needed_all": {"definition": "tool_needed=0 (called or not)", "n": int((~needed).sum()),
+                           "probe_says_not_needed": bootstrap_rate(~probe_needed[~needed])},
+        "auroc_probe_vs_tool_called_within_not_needed": fast_auroc(called[~needed], df["p_needed_oof"].to_numpy()[~needed]),
+        "auroc_probe_vs_tool_called_within_needed": fast_auroc(called[needed], df["p_needed_oof"].to_numpy()[needed]),
         "auroc_probe_vs_tool_needed": fast_auroc(needed, df["p_needed_oof"].to_numpy()),
         "auroc_probe_vs_tool_called": fast_auroc(called, df["p_needed_oof"].to_numpy()),
         "ece_vs_tool_needed": ece,
