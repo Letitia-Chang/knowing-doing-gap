@@ -1,0 +1,79 @@
+{
+  "necessity": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "precision": "bf16",
+    "torch": "2.14.1+cu126",
+    "transformers": "5.24.0",
+    "gpu": "NVIDIA L40S",
+    "gpu_memory_gb": 47.8,
+    "n": 10,
+    "temperature": 0.7,
+    "seed": 0,
+    "batch_size": 8,
+    "sampling": "temperature only (top_p=1, top_k off, repetition_penalty=1)",
+    "n_questions": 1000,
+    "seconds": 172
+  },
+  "action_baseline": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "precision": "bf16",
+    "torch": "2.14.1+cu126",
+    "transformers": "5.24.0",
+    "gpu": "NVIDIA L40S",
+    "gpu_memory_gb": 47.8,
+    "decoding": "greedy",
+    "batch_size": 16,
+    "n_questions": 1000,
+    "seconds": 168
+  },
+  "activations_baseline": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "precision": "bf16",
+    "torch": "2.14.1+cu126",
+    "transformers": "5.24.0",
+    "gpu": "NVIDIA L40S",
+    "gpu_memory_gb": 47.8,
+    "shape_last_token": [
+      29,
+      1000,
+      3584
+    ],
+    "dtype": "float16",
+    "batch_size": 8,
+    "last_token_strings": [
+      "\u010a"
+    ],
+    "seconds": 20
+  },
+  "action_intervention": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "precision": "bf16",
+    "torch": "2.14.1+cu126",
+    "transformers": "5.24.0",
+    "gpu": "NVIDIA L40S",
+    "gpu_memory_gb": 47.8,
+    "decoding": "greedy",
+    "batch_size": 16,
+    "n_questions": 1000,
+    "seconds": 169
+  },
+  "activations_intervention": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "precision": "bf16",
+    "torch": "2.14.1+cu126",
+    "transformers": "5.24.0",
+    "gpu": "NVIDIA L40S",
+    "gpu_memory_gb": 47.8,
+    "shape_last_token": [
+      29,
+      1000,
+      3584
+    ],
+    "dtype": "float16",
+    "batch_size": 8,
+    "last_token_strings": [
+      "\u010a"
+    ],
+    "seconds": 18
+  }
+}

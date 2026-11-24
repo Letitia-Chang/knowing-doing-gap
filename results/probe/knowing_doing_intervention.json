@@ -1,0 +1,98 @@
+{
+  "n": 1000,
+  "tool_call_rate": 0.607,
+  "tool_needed_rate": 0.608,
+  "probe_says_needed_rate": 0.561,
+  "four_cell_counts": {
+    "knows_does": 439,
+    "knows_doesnt": 122,
+    "unneeded_does": 168,
+    "neither": 271
+  },
+  "behavioural_mismatch_rate": 0.331,
+  "probe_vs_necessity_mismatch_rate": 0.187,
+  "probe_vs_action_mismatch_rate": 0.29,
+  "over_use": {
+    "definition": "tool_needed=0 and tool_called=1",
+    "n": 165,
+    "probe_says_not_needed": {
+      "n": 165,
+      "rate": 0.7515151515151515,
+      "lo": 0.6848484848484848,
+      "hi": 0.8121212121212121
+    }
+  },
+  "needed_and_called": {
+    "n": 442,
+    "probe_says_needed": {
+      "n": 442,
+      "rate": 0.9004524886877828,
+      "lo": 0.8733031674208145,
+      "hi": 0.9276583710407237
+    }
+  },
+  "under_use": {
+    "definition": "tool_needed=1 and tool_called=0",
+    "n": 166,
+    "probe_says_needed": {
+      "n": 166,
+      "rate": 0.5602409638554217,
+      "lo": 0.4819277108433735,
+      "hi": 0.6325301204819277
+    }
+  },
+  "not_needed_and_not_called": {
+    "n": 227,
+    "probe_says_not_needed": {
+      "n": 227,
+      "rate": 0.8722466960352423,
+      "lo": 0.8281938325991189,
+      "hi": 0.9162995594713657
+    }
+  },
+  "auroc_probe_vs_tool_needed": 0.9008836264769066,
+  "auroc_probe_vs_tool_called": 0.7857187771168429,
+  "ece_vs_tool_needed": 0.05060058357199999,
+  "by_category": {
+    "arithmetic": {
+      "n": 500,
+      "tool_call_rate": 0.828,
+      "tool_needed_rate": 0.626,
+      "over_use_n": 116,
+      "over_use_probe_says_not_needed": {
+        "n": 116,
+        "rate": 0.8793103448275862,
+        "lo": 0.8189655172413793,
+        "hi": 0.9312499999999988
+      },
+      "four_cell_counts": {
+        "knows_does": 284,
+        "knows_doesnt": 6,
+        "unneeded_does": 130,
+        "neither": 80
+      }
+    },
+    "factual": {
+      "n": 500,
+      "tool_call_rate": 0.386,
+      "tool_needed_rate": 0.59,
+      "over_use_n": 49,
+      "over_use_probe_says_not_needed": {
+        "n": 49,
+        "rate": 0.4489795918367347,
+        "lo": 0.30612244897959184,
+        "hi": 0.5918367346938775
+      },
+      "four_cell_counts": {
+        "knows_does": 155,
+        "knows_doesnt": 116,
+        "unneeded_does": 38,
+        "neither": 191
+      }
+    }
+  },
+  "prompt": "intervention",
+  "feature": "last_token",
+  "threshold": 0.5,
+  "malformed_rate": 0.001
+}

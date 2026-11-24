@@ -1,0 +1,83 @@
+{
+  "label_col": "tool_needed",
+  "label_threshold": 1.0,
+  "activations": "results/probe/activations_intervention.npz",
+  "results": [
+    {
+      "scope": "all",
+      "feature": "last_token",
+      "n": 1000,
+      "n_needed": 608,
+      "needed_rate": 0.608,
+      "nested": {
+        "auroc": 0.9008836150169373,
+        "bal_acc": 0.8144971804511278,
+        "auroc_lo": 0.8824330747127533,
+        "auroc_hi": 0.9178298845887184,
+        "bal_acc_lo": 0.7896602783300778,
+        "bal_acc_hi": 0.8372479137460664
+      },
+      "nested_auroc_per_repeat": [
+        0.8950179815292358,
+        0.9031577110290527,
+        0.8973885774612427
+      ],
+      "selected_layer_counts": {
+        "19": 1,
+        "20": 4,
+        "21": 3,
+        "22": 1,
+        "23": 1,
+        "26": 5
+      },
+      "peak_layer_by_curve": 26,
+      "null_nested_auroc": [
+        0.4683513939380646,
+        0.506746768951416
+      ],
+      "null_nested_bal_acc": [
+        0.48360298066595064,
+        0.5155243018259936
+      ],
+      "config": {
+        "folds": 5,
+        "repeats": 3,
+        "inner_folds": 3,
+        "c_grid": [
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "null_repeats": 2,
+        "n_boot": 1000,
+        "seed": 0
+      },
+      "baselines": {
+        "surface_logreg": {
+          "auroc": 0.7464839554242749,
+          "bal_acc": 0.6861070085929108,
+          "auroc_lo": 0.7156071911821684,
+          "auroc_hi": 0.7751407294426432,
+          "bal_acc_lo": 0.6610108612369421,
+          "bal_acc_hi": 0.7118923567044065
+        },
+        "surface_gboost": {
+          "auroc": 0.7794227477175081,
+          "bal_acc": 0.6710358485499464,
+          "auroc_lo": 0.7504352978629817,
+          "auroc_hi": 0.8062099746693125,
+          "bal_acc_lo": 0.6410792315176441,
+          "bal_acc_hi": 0.698004728240295
+        },
+        "category_only": {
+          "auroc": 0.4906308740601504,
+          "bal_acc": 0.5188809076262084,
+          "auroc_lo": 0.45140397667997034,
+          "auroc_hi": 0.5270903283946119,
+          "bal_acc_lo": 0.4874800750798652,
+          "bal_acc_hi": 0.5503625654372736
+        }
+      }
+    }
+  ]
+}
