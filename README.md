@@ -1,6 +1,9 @@
 # The Knowing-Doing Gap: Does an LLM Know It Needs a Tool?
 
-A behavioral probing experiment measuring the gap between what an LLM *believes* about its own capability and what it *does* when tools are available. This is a black-box, behavioral adaptation of the paper's tool-necessity test, run on **Qwen/Qwen2.5-7B-Instruct-Turbo** via TogetherAI.
+An experiment measuring the gap between what an LLM *believes* about its own capability and what it *does* when tools are available. It has two parts, both adaptations of the paper's tool-necessity setup on Qwen2.5-7B-Instruct:
+
+1. **Behavioral experiment** (30 questions, black-box through TogetherAI): does the model call a tool when it needs one, and only then?
+2. **Hidden-state probe extension** (1,000 questions, local bf16 run with access to activations): does the model's internal representation encode "this question needs a tool", and does its behavior follow it? See [Hidden-state probe (extension)](#hidden-state-probe-extension).
 
 Based on: Cheng, Fan, JafariRaviz, Rezaei, Feizi — ["Model-Adaptive Tool Necessity Reveals the Knowing-Doing Gap in LLM Tool Use"](https://arxiv.org/abs/2605.14038), 2026.
 
@@ -21,6 +24,8 @@ Each question is mapped into one of four cells:
 
 ## Results at a glance
 
+**Behavioral experiment** (30 questions, TogetherAI):
+
 | Metric                         | Baseline | Intervention |
 | ------------------------------ | -------: | ------------: |
 | Tool call rate                 |    93.3% |         56.7% |
@@ -34,10 +39,26 @@ Qwen2.5-7B-Instruct calls a tool on 28 of 30 questions — including most of the
   <img src="results/figures/baseline_vs_intervention_mismatch.png" width="45%" alt="Baseline vs intervention mismatch rate">
 </p>
 
+**Hidden-state probe** (1,000 questions, local bf16; every number is from [`results/probe/summary.md`](results/probe/summary.md)):
+
+| | Result |
+|---|---|
+| Linear probe on the last prompt token, predicting tool necessity (nested CV AUROC, 95% CI) | 0.900 [0.882, 0.916]; shuffled labels 0.489; best surface-feature baseline 0.779 |
+| Arithmetic / factual QA separately | 0.963 vs best surface baseline 0.917 / 0.814 vs 0.555 |
+| Tool-call rate, baseline prompt → intervention prompt | 95.5% → 60.7% |
+| Probe's P(needed) across the two prompts on the same questions | Spearman 0.980, while 348 questions flipped from calling to not calling |
+
+In short: tool necessity is linearly decodable from the model's hidden state, and the decoded signal barely changes when a prompt change shifts behavior. For arithmetic, much of the signal is already readable from the question's surface form; for factual QA the probe is well above surface baselines. A probe shows what is decodable, not what the model uses. See the [full results and caveats](#results).
+
+<p>
+  <img src="results/probe/figures/probe_layer_curve.png" width="100%" alt="Probe AUROC by layer with shuffled-label and surface-feature baselines">
+</p>
+
 ## How this differs from the paper
 
-- **Behavioral only.** The paper also probes hidden states to show the model internally "knows" it needs a tool. This project measures behavior through the API (repeated no-tool runs, self-reported confidence, actual tool calls) and does no hidden-state probing.
-- **One model, small question set.** 30 questions on a single model, versus the paper's larger multi-model study.
+- **Behavioral experiment: black-box only.** It measures behavior through the API (repeated no-tool runs, self-reported confidence, actual tool calls) and does no hidden-state probing.
+- **Hidden-state extension: a partial adaptation.** It trains linear probes for tool necessity on a locally run model's hidden states, but it does **not** reproduce the paper's action probe, its necessity/action direction-similarity analysis, or its per-sample stage attribution, so it does not test the paper's orthogonality claim. See [what is replicated, adapted, and new](#what-is-replicated-adapted-and-new).
+- **One model, small question sets.** 30 questions (behavioral) and 1,000 questions (probe extension) on a single model, versus the paper's larger multi-model study.
 - **Own intervention.** The one-line system-prompt intervention is my addition, not part of the original paper.
 
 ## Repository structure
@@ -89,6 +110,7 @@ knowing-doing-gap/
       baseline_mismatch_by_category.png
       intervention_four_cell_outcomes.png
       baseline_vs_intervention_mismatch.png
+    probe/                  # Probe extension outputs: summary.md, figures/, CSVs (activation .npz files are gitignored)
   run_experiment.sh         # End-to-end runner; writes to results/ by default
   requirements.txt
   .env.example
@@ -191,7 +213,7 @@ See [Results at a glance](#results-at-a-glance) above for the headline numbers. 
 
 ## Hidden-state probe (extension)
 
-> **Status: draft. The run that produces the results has not finished, so this section contains no result numbers yet.** Every number that will appear here is generated by `./run_probe.sh` into `results/probe/summary.md`, and will be copied from there, never typed by hand.
+> Every number in this section is generated by `./run_probe.sh` into [`results/probe/summary.md`](results/probe/summary.md) and `summary.json`, and copied from there. The run used Qwen2.5-7B-Instruct in bf16 on one NVIDIA L40S.
 
 The behavioral experiment above treats the model as a black box (TogetherAI gives no access to activations). This extension asks the question the paper answers with hidden states: **does Qwen2.5-7B-Instruct's internal representation encode "this question needs a tool" even when its behavior does not follow?** That is the knowing-doing gap at the representation level.
 
@@ -270,7 +292,79 @@ They cover question generation, labeling thresholds, the tool-call decision pars
 
 ### Results
 
-*Pending. This subsection will be generated from `results/probe/summary.md` after the run finishes: question-set and necessity statistics, probe performance against the controls (overall and per category), the four-cell analysis and over-use result, calibration, label-threshold sensitivity, and the secondary intervention-prompt comparison. The top-of-README summary will be updated only once these results exist.*
+The tables are [`results/probe/summary.md`](results/probe/summary.md), copied verbatim.
+
+#### Question set and local necessity labels
+
+1000 questions ({'arithmetic': 500, 'factual': 500}); tool_needed = any of N=10 no-tool samples wrong.
+
+| Label rule | overall | arithmetic | factual |
+|---|--:|--:|--:|
+| any wrong (primary) | 60.8% | 62.6% | 59.0% |
+| accuracy < 80% | 56.9% | 60.4% | 53.4% |
+| accuracy < 50% | 53.5% | 58.6% | 48.4% |
+
+On the original 30 questions, local-bf16 labels agree with the TogetherAI-Turbo labels on 30/30 (needed: 13 local vs 13 Together).
+
+#### Probe: nested-CV out-of-fold performance (95% bootstrap CI over questions)
+
+| Scope | Representation | n (needed) | Nested AUROC | Nested balanced acc. | Shuffled-label AUROC | Surface LR AUROC | Surface GBM AUROC | Layers chosen (count) |
+|---|---|--:|--:|--:|--:|--:|--:|---|
+| all | last_token | 1000 (608) | 0.900 [0.882, 0.916] | 0.814 [0.789, 0.838] | 0.489 | 0.746 | 0.779 | L24 (4), L25 (4), L21 (3) |
+| arithmetic | last_token | 500 (313) | 0.963 [0.948, 0.976] | 0.900 [0.872, 0.926] | 0.469 | 0.866 | 0.917 | L14 (9), L28 (2), L18 (1) |
+| factual | last_token | 500 (295) | 0.814 [0.774, 0.852] | 0.752 [0.714, 0.790] | 0.496 | 0.555 | 0.509 | L25 (7), L28 (5), L24 (2) |
+| all | mean_pool | 1000 (608) | 0.883 [0.862, 0.901] | 0.800 [0.773, 0.825] | 0.486 | 0.746 | 0.779 | L19 (9), L13 (2), L14 (1) |
+
+Per-layer out-of-fold AUROC, last-token probe (layer 0 = embeddings; the peak is optimistic because it is picked on the same curve):
+
+| Scope | Layer 0 | Layer 1 | Peak (layer) | Final layer |
+|---|--:|--:|--:|--:|
+| all | 0.500 | 0.812 | 0.904 (L24) | 0.900 |
+| arithmetic | 0.500 | 0.946 | 0.963 (L14) | 0.962 |
+| factual | 0.500 | 0.590 | 0.818 (L24) | 0.812 |
+
+Label-threshold sensitivity (pooled scope, last-token probe): tool_needed = accuracy < 80% -> nested AUROC 0.909 [0.891, 0.924]; tool_needed = accuracy < 50% -> nested AUROC 0.906 [0.888, 0.923]
+
+#### Probe-predicted need vs actual tool calls (out-of-fold probe, threshold 0.5)
+
+| Prompt | n | Tool-call rate | Needed + called | Needed + NOT called | Not needed + called (over-use) | Not needed + not called |
+|---|--:|--:|--:|--:|--:|--:|
+| baseline | 1000 | 95.5% | 585 | 23 | 370 | 22 |
+| intervention | 1000 | 60.7% | 442 | 166 | 165 | 227 |
+
+| Prompt | Probe cell: knows & does | knows, doesn't | not-needed & does | neither | Probe says NOT needed: over-use items | ...not-needed & not-called items | ...ALL not-needed items | Probe says needed: needed & not-called items |
+|---|--:|--:|--:|--:|---|---|---|---|
+| baseline | 552 | 18 | 403 | 27 | 81% [77%, 85%] (n=370) | 86% [73%, 100%] (n=22) | 81% [77%, 85%] (n=392) | 65% [43%, 83%] (n=23) |
+| intervention | 439 | 122 | 168 | 271 | 75% [68%, 81%] (n=165) | 87% [83%, 92%] (n=227) | 82% [78%, 86%] (n=392) | 56% [48%, 63%] (n=166) |
+
+Probe score vs behaviour: baseline: AUROC(probe, tool_needed)=0.900, AUROC(probe, tool_called)=0.623 (within not-needed only 0.508, within needed only 0.709), ECE=0.043; intervention: AUROC(probe, tool_needed)=0.901, AUROC(probe, tool_called)=0.786 (within not-needed only 0.628, within needed only 0.827), ECE=0.051
+
+#### Same questions, two prompts (secondary)
+
+Tool-call rate 95.5% (baseline) -> 60.7% (intervention); 348 questions flipped from calling to not calling. Probe P(needed) across the two prompts: Spearman rho = 0.980, mean |change| = 0.046, mean change on the flipped questions = -0.008.
+
+Run info: model Qwen/Qwen2.5-7B-Instruct, precision bf16, GPU NVIDIA L40S, torch 2.14.1+cu126, transformers 5.24.0.
+
+<p>
+  <img src="results/probe/figures/probe_layer_curve.png" width="100%" alt="Probe AUROC by layer">
+</p>
+<p>
+  <img src="results/probe/figures/four_cell.png" width="100%" alt="Probe-predicted need vs actual tool call, baseline prompt">
+</p>
+<p>
+  <img src="results/probe/figures/four_cell_intervention.png" width="100%" alt="Probe-predicted need vs actual tool call, intervention prompt">
+</p>
+<p>
+  <img src="results/probe/figures/calibration.png" width="40%" alt="Calibration of the probe, baseline prompt">
+</p>
+
+#### Reading the results
+
+1. **Tool necessity is linearly decodable from the last prompt token.** The pooled probe reaches nested AUROC 0.900 [0.882, 0.916], against 0.489 with shuffled labels and 0.779 for the best surface-feature model. The label-threshold variants give about the same (0.909 and 0.906), so the result does not hinge on the "any of 10 samples wrong" rule.
+2. **How much of that is surface form depends on the domain.** For arithmetic the probe (0.963) is only modestly above the best surface baseline (0.917), and its AUROC is already 0.946 at layer 1 (peak 0.963 at layer 14), so most of the signal is readable almost immediately from the expression itself. For factual QA the probe (0.814) is far above the surface baselines (0.555 and 0.509) and builds with depth (0.590 at layer 1, 0.818 at its peak at layer 24), which is the stronger evidence of a representation that goes beyond the question's surface form. What that representation encodes (for example topic familiarity versus answerability) is not determined here.
+3. **Under the baseline prompt, behavior does not follow the probe's belief.** The model calls a tool on 95.5% of questions, including 370 of the 392 questions it did not need a tool for. The probe says "not needed" on 81% of those over-use items, but also on 81% of *all* not-needed items (and on 86% of the 22 not-needed questions where the model did not call a tool), so it does not treat over-used questions differently from the rest. Among not-needed questions the probe score does not separate called from not-called (AUROC 0.508). So the over-use looks like a prompt-and-policy effect, not a case of the representation failing to flag these questions as unneeded.
+4. **A prompt change moves behavior but not the representation.** The intervention prompt lowers the call rate to 60.7%, and 348 questions flip from calling to not calling, while the probe's P(needed) for the same questions is nearly unchanged (Spearman 0.980; mean change on the flipped questions -0.008). Behavior also follows the probe more under this prompt (AUROC of the probe score for predicting tool calls 0.786 versus 0.623 under the baseline). The cost is under-use: needed-but-not-called questions grow from 23 to 166, and the probe says "needed" on 56% of those 166, the knowing-but-not-doing pattern.
+5. **Caveats that bear on how to read this:** the probes for the two prompts are trained separately; a probe shows what is decodable, not that the model uses it (no causal test was run); and the layer chosen by nested CV varies across folds (for the pooled probe it was spread over layers such as 24, 25 and 21), so there is no single "best layer".
 
 ### Limitations
 
@@ -282,6 +376,8 @@ They cover question generation, labeling thresholds, the tool-call decision pars
 - **Few probe training samples relative to dimensionality** (3,584-dimensional hidden states), so strong regularization is used and per-category results are noisier than pooled ones.
 - **Behavior is one decision.** The action stage records only the first-turn decision under greedy decoding; the mock search returns the gold answer, so post-tool accuracy is not analysed. The prompt includes a question ID; the original 30 questions carry `A`/`F` prefixes that reveal the category, while the 970 new ones use neutral IDs.
 - **Numerical noise.** Hidden states in bf16 can differ slightly with batch composition. The batch size and library versions are recorded in `run_info.json`. If the 8-bit fallback is used, the weights are quantized and the activations are not bf16 activations.
+- **A control was added after I first saw the results.** My first version of the over-use analysis reported only that the probe says "not needed" on 81% of over-use items. That number is uninformative alone, because it equals the probe's accuracy on all not-needed items. I added the comparison against all not-needed items and the within-class AUROCs in a separate commit (`knowing_doing.py`, `summarize.py`), with the original values unchanged. It was a post-hoc addition, not a pre-planned test.
+- **The "probe says not needed" cells use a 0.5 threshold on a class-balanced probe**, and the calibration error (ECE) is measured against the necessity label, not against behavior.
 - **No steering test** has been run.
 
 ## License
