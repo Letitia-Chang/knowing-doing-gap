@@ -19,3 +19,8 @@ __MACOSX/
 # Experiment raw logs can be regenerated and may be noisy
 results/raw_*.json
 results/questions_selected.json
+
+# Hidden-state probe extension: activations are ~60-200 MB each (over GitHub's 100 MB file limit);
+# regenerate with ./run_probe.sh gpu. Everything else under results/probe/ is committed.
+results/probe/activations*.npz
+results_probe_smoke/
