@@ -1,0 +1,294 @@
+{
+  "label_col": "tool_needed",
+  "label_threshold": 1.0,
+  "activations": "results/probe/activations.npz",
+  "results": [
+    {
+      "scope": "all",
+      "feature": "last_token",
+      "n": 1000,
+      "n_needed": 608,
+      "needed_rate": 0.608,
+      "nested": {
+        "auroc": 0.8997633457183838,
+        "bal_acc": 0.8135069817400644,
+        "auroc_lo": 0.88211360424757,
+        "auroc_hi": 0.9161143928766251,
+        "bal_acc_lo": 0.7892946340005992,
+        "bal_acc_hi": 0.8376089064340451
+      },
+      "nested_auroc_per_repeat": [
+        0.8926264047622681,
+        0.9009255766868591,
+        0.889051616191864
+      ],
+      "selected_layer_counts": {
+        "17": 1,
+        "19": 1,
+        "20": 1,
+        "21": 3,
+        "22": 1,
+        "24": 4,
+        "25": 4
+      },
+      "peak_layer_by_curve": 24,
+      "null_nested_auroc": [
+        0.47178351879119873,
+        0.5067929029464722
+      ],
+      "null_nested_bal_acc": [
+        0.4703611707841031,
+        0.5193508324382384
+      ],
+      "config": {
+        "folds": 5,
+        "repeats": 3,
+        "inner_folds": 3,
+        "c_grid": [
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "null_repeats": 2,
+        "n_boot": 1000,
+        "seed": 0
+      },
+      "baselines": {
+        "surface_logreg": {
+          "auroc": 0.7464839554242749,
+          "bal_acc": 0.6861070085929108,
+          "auroc_lo": 0.7156071911821684,
+          "auroc_hi": 0.7751407294426432,
+          "bal_acc_lo": 0.6610108612369421,
+          "bal_acc_hi": 0.7118923567044065
+        },
+        "surface_gboost": {
+          "auroc": 0.7794227477175081,
+          "bal_acc": 0.6710358485499464,
+          "auroc_lo": 0.7504352978629817,
+          "auroc_hi": 0.8062099746693125,
+          "bal_acc_lo": 0.6410792315176441,
+          "bal_acc_hi": 0.698004728240295
+        },
+        "category_only": {
+          "auroc": 0.4906308740601504,
+          "bal_acc": 0.5188809076262084,
+          "auroc_lo": 0.45140397667997034,
+          "auroc_hi": 0.5270903283946119,
+          "bal_acc_lo": 0.4874800750798652,
+          "bal_acc_hi": 0.5503625654372736
+        }
+      }
+    },
+    {
+      "scope": "arithmetic",
+      "feature": "last_token",
+      "n": 500,
+      "n_needed": 313,
+      "needed_rate": 0.626,
+      "nested": {
+        "auroc": 0.9631989598274231,
+        "bal_acc": 0.8997454340434983,
+        "auroc_lo": 0.9482831314206124,
+        "auroc_hi": 0.9757861167192459,
+        "bal_acc_lo": 0.8720975843092507,
+        "bal_acc_hi": 0.9255606127047937
+      },
+      "nested_auroc_per_repeat": [
+        0.9576634764671326,
+        0.9601237177848816,
+        0.961319625377655
+      ],
+      "selected_layer_counts": {
+        "14": 9,
+        "18": 1,
+        "20": 1,
+        "21": 1,
+        "23": 1,
+        "28": 2
+      },
+      "peak_layer_by_curve": 14,
+      "null_nested_auroc": [
+        0.4528540372848511,
+        0.4855119585990906
+      ],
+      "null_nested_bal_acc": [
+        0.4816507491756505,
+        0.5023833524115426
+      ],
+      "config": {
+        "folds": 5,
+        "repeats": 3,
+        "inner_folds": 3,
+        "c_grid": [
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "null_repeats": 2,
+        "n_boot": 1000,
+        "seed": 0
+      },
+      "baselines": {
+        "surface_logreg": {
+          "auroc": 0.8660368010114299,
+          "bal_acc": 0.839700329739796,
+          "auroc_lo": 0.8333689787546716,
+          "auroc_hi": 0.896595142636229,
+          "bal_acc_lo": 0.8114333531341826,
+          "bal_acc_hi": 0.8662627051770022
+        },
+        "surface_gboost": {
+          "auroc": 0.9172404366916677,
+          "bal_acc": 0.8548803198305172,
+          "auroc_lo": 0.8904356550293387,
+          "auroc_hi": 0.9413765721947118,
+          "bal_acc_lo": 0.8221471261789578,
+          "bal_acc_hi": 0.8872212804467099
+        }
+      }
+    },
+    {
+      "scope": "factual",
+      "feature": "last_token",
+      "n": 500,
+      "n_needed": 295,
+      "needed_rate": 0.59,
+      "nested": {
+        "auroc": 0.8143364787101746,
+        "bal_acc": 0.7518809425382389,
+        "auroc_lo": 0.7743654280900956,
+        "auroc_hi": 0.8523700311779976,
+        "bal_acc_lo": 0.7140464438463091,
+        "bal_acc_hi": 0.7900319799026584
+      },
+      "nested_auroc_per_repeat": [
+        0.8153120875358582,
+        0.8033401966094971,
+        0.8067135214805603
+      ],
+      "selected_layer_counts": {
+        "22": 1,
+        "24": 2,
+        "25": 7,
+        "28": 5
+      },
+      "peak_layer_by_curve": 24,
+      "null_nested_auroc": [
+        0.5070359706878662,
+        0.485903263092041
+      ],
+      "null_nested_bal_acc": [
+        0.516246382802811,
+        0.48094253823894173
+      ],
+      "config": {
+        "folds": 5,
+        "repeats": 3,
+        "inner_folds": 3,
+        "c_grid": [
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "null_repeats": 2,
+        "n_boot": 1000,
+        "seed": 0
+      },
+      "baselines": {
+        "surface_logreg": {
+          "auroc": 0.5549152542372882,
+          "bal_acc": 0.545059942124845,
+          "auroc_lo": 0.5021916372845222,
+          "auroc_hi": 0.6080540921783678,
+          "bal_acc_lo": 0.500726411204423,
+          "bal_acc_hi": 0.5879293332782441
+        },
+        "surface_gboost": {
+          "auroc": 0.5086068623398098,
+          "bal_acc": 0.5145514675485738,
+          "auroc_lo": 0.4521412285415556,
+          "auroc_hi": 0.559903650101622,
+          "bal_acc_lo": 0.4698963332344211,
+          "bal_acc_hi": 0.5587061131755624
+        }
+      }
+    },
+    {
+      "scope": "all",
+      "feature": "mean_pool",
+      "n": 1000,
+      "n_needed": 608,
+      "needed_rate": 0.608,
+      "nested": {
+        "auroc": 0.8829970955848694,
+        "bal_acc": 0.7999798603651987,
+        "auroc_lo": 0.8616116359829903,
+        "auroc_hi": 0.9013296768069268,
+        "bal_acc_lo": 0.7734244822805849,
+        "bal_acc_hi": 0.8250172505020473
+      },
+      "nested_auroc_per_repeat": [
+        0.8736993074417114,
+        0.8795440196990967,
+        0.8771440386772156
+      ],
+      "selected_layer_counts": {
+        "13": 2,
+        "14": 1,
+        "16": 1,
+        "17": 1,
+        "18": 1,
+        "19": 9
+      },
+      "peak_layer_by_curve": 19,
+      "null_nested_auroc": [
+        0.4723583459854126,
+        0.5001174807548523
+      ],
+      "null_nested_bal_acc": [
+        0.4960559881847476,
+        0.5040111439312567
+      ],
+      "config": {
+        "folds": 5,
+        "repeats": 3,
+        "inner_folds": 3,
+        "c_grid": [
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "null_repeats": 2,
+        "n_boot": 1000,
+        "seed": 0
+      },
+      "baselines": {
+        "surface_logreg": {
+          "auroc": 0.7464839554242749,
+          "bal_acc": 0.6861070085929108,
+          "auroc_lo": 0.7156071911821684,
+          "auroc_hi": 0.7751407294426432,
+          "bal_acc_lo": 0.6610108612369421,
+          "bal_acc_hi": 0.7118923567044065
+        },
+        "surface_gboost": {
+          "auroc": 0.7794227477175081,
+          "bal_acc": 0.6710358485499464,
+          "auroc_lo": 0.7504352978629817,
+          "auroc_hi": 0.8062099746693125,
+          "bal_acc_lo": 0.6410792315176441,
+          "bal_acc_hi": 0.698004728240295
+        },
+        "category_only": {
+          "auroc": 0.4906308740601504,
+          "bal_acc": 0.5188809076262084,
+          "auroc_lo": 0.45140397667997034,
+          "auroc_hi": 0.5270903283946119,
+          "bal_acc_lo": 0.4874800750798652,
+          "bal_acc_hi": 0.5503625654372736
+        }
+      }
+    }
+  ]
+}

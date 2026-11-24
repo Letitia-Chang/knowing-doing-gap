@@ -20,7 +20,7 @@ _NON_ANSWER_NUMBER = re.compile(r"\bin base\s+\d+\b|\bbase\s+\d+\b", flags=re.I)
 def extract_last_number(text: str) -> float | None:
     # Strip annotations like "in base 10" so they aren't mistaken for the
     # answer itself (e.g. "63 in base 10" should grade as 63, not 10).
-    text = _NON_ANSWER_NUMBER.sub("", text)
+    text = _NON_ANSWER_NUMBER.sub("", text.replace("−", "-"))  # U+2212 minus sign
     nums = re.findall(r"[-+]?\d[\d,]*(?:\.\d+)?", text)
     if not nums:
         return None
@@ -41,7 +41,12 @@ def grade_arithmetic(answer: str, reference: str, tolerance: float = 1e-6) -> bo
 def grade_factual(answer: str, reference: str, accept: list[str] | None = None) -> bool:
     answer_n = normalize_text(answer)
     candidates = [reference] + (accept or [])
-    return any(normalize_text(c) in answer_n for c in candidates)
+    # Whole-token match so short references ("au", "one") don't hit inside other words.
+    return any(
+        re.search(rf"(?<!\w){re.escape(n)}(?!\w)", answer_n)
+        for n in (normalize_text(c) for c in candidates)
+        if n
+    )
 
 
 def grade_answer(question: dict[str, Any], answer: str) -> bool:
