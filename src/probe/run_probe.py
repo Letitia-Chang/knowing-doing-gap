@@ -145,7 +145,7 @@ def main() -> None:
                   f"null AUROC {np.mean(summary['null_nested_auroc']):.3f}  baselines { {k: round(v['auroc'], 3) for k, v in summary['baselines'].items()} }")
 
     pd.DataFrame(curve_rows).to_csv(outdir / f"probe_layer_curve{args.tag}.csv", index=False)
-    (outdir / f"probe_nested{args.tag}.json").write_text(json.dumps({"label_col": label_col, "label_threshold": args.label_threshold, "activations": args.activations, "results": summaries}, indent=2))
+    (outdir / f"probe_nested{args.tag}.json").write_text(json.dumps({"label_col": label_col, "label_threshold": args.label_threshold, "activations": Path(args.activations).name, "results": summaries}, indent=2))
     print(f"Saved probe results to {outdir}")
 
 

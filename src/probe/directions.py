@@ -127,7 +127,7 @@ def main() -> None:
             lines.append(f"| {i['prompt']} | {i['scope']} | {i['n']} ({i['n_needed']} / {i['n_called']}) | {i['label_correlation_phi']:.2f} | {l} | {r.need_auroc:.3f} ({r.need_mcc:.2f}) | {r.action_auroc:.3f} ({r.action_mcc:.2f}) | "
                          f"{r.logreg_cos_need_action:.2f} [{r.logreg_cos_need_action_lo:.2f}, {r.logreg_cos_need_action_hi:.2f}] | {r.logreg_cos_need_need:.2f} / {r.logreg_cos_action_action:.2f} | {r.logreg_cos_disattenuated:.2f} | "
                          f"{r.meandiff_cos_need_action:.2f} | {r.meandiff_cos_disattenuated:.2f} | {r.logreg_cos_shuffled_action:.2f} |")
-    (out / "directions.json").write_text(json.dumps({"config": vars(args), "cells": meta}, indent=2))
+    (out / "directions.json").write_text(json.dumps({"config": {**vars(args), "outdir": Path(args.outdir).name, "actdir": Path(args.actdir).name}, "cells": meta}, indent=2))
     (out / "directions.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
 
