@@ -102,3 +102,49 @@ def test_label_decisions_refer_to_real_factual_questions_and_do_not_conflict():
     groups = [set(dec[k]) for k in ("exclude", "accept_extra", "reject_if_contains")]
     assert all(cat[i] == "factual" for g in groups for i in g)
     assert not (groups[0] & groups[1]) and not (groups[0] & groups[2]) and not (groups[1] & groups[2])
+
+
+# The scripts below are run as separate processes, as the batch job runs them. Importing them inside
+# pytest hides path mistakes, because conftest.py puts src/ on the path.
+import json  # noqa: E402
+import os  # noqa: E402
+import subprocess  # noqa: E402
+import sys  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+PROBE_DIR = Path(__file__).resolve().parent.parent / "src" / "probe"
+
+
+def run_script(name, *args):
+    env = {k: v for k, v in os.environ.items() if k != "PYTHONPATH"}
+    r = subprocess.run([sys.executable, str(PROBE_DIR / name), *args], capture_output=True, text=True, env=env)
+    assert r.returncode == 0, f"{name} failed:\n{r.stdout}\n{r.stderr}"
+
+
+@pytest.mark.parametrize("name", sorted(p.name for p in PROBE_DIR.glob("*.py") if "argparse" in p.read_text()))
+def test_every_script_starts_on_its_own(name):
+    run_script(name, "--help")
+
+
+def test_transfer_and_directions_run_end_to_end(tmp_path):
+    rng = np.random.default_rng(0)
+    n, layers, hidden = 240, 3, 10
+    need = rng.integers(0, 2, n)
+    ids = [f"Q{i:04d}" for i in range(n)]
+    qs = [{"id": ids[i], "category": ["arithmetic", "factual"][i % 2], "question": "x", "tool_needed": bool(need[i])} for i in range(n)]
+    (tmp_path / "questions_probe_labeled.json").write_text(json.dumps({"questions": qs}))
+    called = {"baseline": rng.random(n) < 0.7, "intervention": rng.random(n) < 0.5}
+    for prompt, f in (("baseline", "activations.npz"), ("intervention", "activations_intervention.npz")):
+        a = rng.normal(size=(layers, n, hidden)).astype(np.float16)
+        a[0] = 1.0  # constant layer, like the real embedding layer at the last token
+        a[1:, :, 0] += (3 * (need - 0.5)).astype(np.float16)
+        np.savez(tmp_path / f, last_token=a, ids=np.array(ids))
+        (tmp_path / f"action_local_{prompt}.json").write_text(json.dumps([{"id": i, "tool_called": bool(c)} for i, c in zip(ids, called[prompt])]))
+    common = ["--outdir", str(tmp_path), "--actdir", str(tmp_path), "--n-jobs", "1"]
+    run_script("transfer.py", *common, "--folds", "3", "--repeats", "1")
+    run_script("directions.py", *common, "--splits", "2")
+    t = json.loads((tmp_path / "transfer.json").read_text())
+    assert t["directions"]["all:baseline->intervention"]["metrics"]["B_recentred"]["auroc"] > 0.8
+    assert "Prompt transfer" in (tmp_path / "transfer.md").read_text()
+    d = json.loads((tmp_path / "directions.json").read_text())["cells"]
+    assert not next(c for c in d if c["prompt"] == "intervention" and c["scope"] == "all")["skipped"]

@@ -18,6 +18,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from cv import fast_auroc, make_probe, metrics_with_ci, run_nested, stratified_folds  # noqa: E402
 from io_utils import load_questions  # noqa: E402

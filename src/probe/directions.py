@@ -24,6 +24,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import matthews_corrcoef
 from sklearn.model_selection import StratifiedKFold, StratifiedShuffleSplit
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from cv import fast_auroc, make_probe  # noqa: E402
 from io_utils import load_questions  # noqa: E402
