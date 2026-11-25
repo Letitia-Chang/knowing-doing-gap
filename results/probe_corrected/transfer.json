@@ -1,0 +1,244 @@
+{
+  "n": 982,
+  "n_flipped_called_to_not": 339,
+  "n_stayed_called": 599,
+  "directions": {
+    "all:baseline->intervention": {
+      "metrics": {
+        "A": {
+          "auroc": 0.9103218343879703,
+          "bal_acc": 0.832363747703613,
+          "auroc_lo": 0.8913264248027997,
+          "auroc_hi": 0.9266254949452836,
+          "bal_acc_lo": 0.8068359055596948,
+          "bal_acc_hi": 0.8554064050372155
+        },
+        "B_strict": {
+          "auroc": 0.8960842348778663,
+          "bal_acc": 0.7366937130026536,
+          "auroc_lo": 0.8763519637531444,
+          "auroc_hi": 0.9142387289308492,
+          "bal_acc_lo": 0.7148507653602484,
+          "bal_acc_hi": 0.7577374478115196
+        },
+        "B_recentred": {
+          "auroc": 0.9024375722936654,
+          "bal_acc": 0.8120789957134109,
+          "auroc_lo": 0.8824019978932576,
+          "auroc_hi": 0.9198924627338504,
+          "bal_acc_lo": 0.7872176020388169,
+          "bal_acc_hi": 0.8365493904811611
+        }
+      },
+      "spearman_strict": 0.9629838725665678,
+      "spearman_recentred": 0.9771239657800895,
+      "mean_score_A": 0.6303205583585983,
+      "mean_score_B_strict": -1.4070270355065015,
+      "score_change_flipped_minus_stayed": {
+        "diff": 0.24927323064545293,
+        "lo": 0.16595179741083266,
+        "hi": 0.33404828089160526,
+        "n_in": 339,
+        "n_out": 599
+      },
+      "baseline_score_flipped_minus_stayed": {
+        "diff": -3.114641776039039,
+        "lo": -3.4238342839428553,
+        "hi": -2.833120873113634,
+        "n_in": 339,
+        "n_out": 599
+      },
+      "auroc_baseline_score_predicts_staying_called": 0.8164541689443073
+    },
+    "all:intervention->baseline": {
+      "metrics": {
+        "A": {
+          "auroc": 0.9142979859835341,
+          "bal_acc": 0.8308285704565557,
+          "auroc_lo": 0.8970806760165874,
+          "auroc_hi": 0.930057215267622,
+          "bal_acc_lo": 0.8061065615256622,
+          "bal_acc_hi": 0.8534847565456118
+        },
+        "B_strict": {
+          "auroc": 0.9030031639110022,
+          "bal_acc": 0.7940055793699394,
+          "auroc_lo": 0.8846021441340263,
+          "auroc_hi": 0.9199314761404656,
+          "bal_acc_lo": 0.7681192772965256,
+          "bal_acc_hi": 0.8181870431680046
+        },
+        "B_recentred": {
+          "auroc": 0.9049550928760972,
+          "bal_acc": 0.816867387902293,
+          "auroc_lo": 0.8859664816026869,
+          "auroc_hi": 0.9222708179795519,
+          "bal_acc_lo": 0.791510735658573,
+          "bal_acc_hi": 0.8405268340868622
+        }
+      },
+      "spearman_strict": 0.9715874665745107,
+      "spearman_recentred": 0.9744259067196587,
+      "mean_score_A": 0.6033472340384552,
+      "mean_score_B_strict": 1.1141896559746187
+    },
+    "arithmetic:baseline->intervention": {
+      "metrics": {
+        "A": {
+          "auroc": 0.9627376945550221,
+          "bal_acc": 0.8997454340434983,
+          "auroc_lo": 0.947780483628696,
+          "auroc_hi": 0.9756561223426313,
+          "bal_acc_lo": 0.8720975843092507,
+          "bal_acc_hi": 0.9255606127047937
+        },
+        "B_strict": {
+          "auroc": 0.9388358305855017,
+          "bal_acc": 0.7316293929712461,
+          "auroc_lo": 0.9194998378682582,
+          "auroc_hi": 0.9571216565694087,
+          "bal_acc_lo": 0.7046224972428455,
+          "bal_acc_hi": 0.758415058525783
+        },
+        "B_recentred": {
+          "auroc": 0.9590985973244948,
+          "bal_acc": 0.8996770941894039,
+          "auroc_lo": 0.9426369112260911,
+          "auroc_hi": 0.9737373800236444,
+          "bal_acc_lo": 0.8708190067180847,
+          "bal_acc_hi": 0.9269472696213411
+        }
+      },
+      "spearman_strict": 0.8851243084972339,
+      "spearman_recentred": 0.9812669650678603,
+      "mean_score_A": 1.4730797246297203,
+      "mean_score_B_strict": -2.4518655985593796,
+      "score_change_flipped_minus_stayed": {
+        "diff": 0.19033233324343896,
+        "lo": 0.014394340182250318,
+        "hi": 0.3653194558321463,
+        "n_in": 84,
+        "n_out": 414
+      },
+      "baseline_score_flipped_minus_stayed": {
+        "diff": -5.283581181085464,
+        "lo": -5.919108962333286,
+        "hi": -4.583975895502365,
+        "n_in": 84,
+        "n_out": 414
+      },
+      "auroc_baseline_score_predicts_staying_called": 0.8968829077524729
+    },
+    "arithmetic:intervention->baseline": {
+      "metrics": {
+        "A": {
+          "auroc": 0.9600724402453401,
+          "bal_acc": 0.9061352104013258,
+          "auroc_lo": 0.9444019315216259,
+          "auroc_hi": 0.9743789485163706,
+          "bal_acc_lo": 0.8776068333831349,
+          "bal_acc_hi": 0.9324826602777025
+        },
+        "B_strict": {
+          "auroc": 0.9317797406502537,
+          "bal_acc": 0.7535921135808374,
+          "auroc_lo": 0.9098916111114753,
+          "auroc_hi": 0.950908957591246,
+          "bal_acc_lo": 0.7146537205707134,
+          "bal_acc_hi": 0.7893449704606627
+        },
+        "B_recentred": {
+          "auroc": 0.9570996565922332,
+          "bal_acc": 0.8884949855632058,
+          "auroc_lo": 0.9407893771812665,
+          "auroc_hi": 0.9706920985912592,
+          "bal_acc_lo": 0.8591258249577547,
+          "bal_acc_hi": 0.913724802714573
+        }
+      },
+      "spearman_strict": 0.9352549410197639,
+      "spearman_recentred": 0.9809718598874394,
+      "mean_score_A": 1.444812436858813,
+      "mean_score_B_strict": 2.7111166189312934
+    },
+    "factual:baseline->intervention": {
+      "metrics": {
+        "A": {
+          "auroc": 0.8389565517837091,
+          "bal_acc": 0.7492010019866977,
+          "auroc_lo": 0.8043351673657703,
+          "auroc_hi": 0.8727120751341131,
+          "bal_acc_lo": 0.7091533176002497,
+          "bal_acc_hi": 0.7883559178424767
+        },
+        "B_strict": {
+          "auroc": 0.8239958538481472,
+          "bal_acc": 0.6882612075667272,
+          "auroc_lo": 0.7847545093332976,
+          "auroc_hi": 0.8579869044211648,
+          "bal_acc_lo": 0.6546989669277405,
+          "bal_acc_hi": 0.719540742164788
+        },
+        "B_recentred": {
+          "auroc": 0.8311997926924074,
+          "bal_acc": 0.7452794333592467,
+          "auroc_lo": 0.7943265250782944,
+          "auroc_hi": 0.864907395199459,
+          "bal_acc_lo": 0.7063779438071902,
+          "bal_acc_hi": 0.782203545644199
+        }
+      },
+      "spearman_strict": 0.9309651930976126,
+      "spearman_recentred": 0.9563978059377665,
+      "mean_score_A": 0.08872194726787828,
+      "mean_score_B_strict": -1.07938820667266,
+      "score_change_flipped_minus_stayed": {
+        "diff": 0.014575404416117623,
+        "lo": -0.07175732266983592,
+        "hi": 0.10350426639000981,
+        "n_in": 255,
+        "n_out": 185
+      },
+      "baseline_score_flipped_minus_stayed": {
+        "diff": -1.6770159514138872,
+        "lo": -1.92780245332373,
+        "hi": -1.4241879322264672,
+        "n_in": 255,
+        "n_out": 185
+      },
+      "auroc_baseline_score_predicts_staying_called": 0.8035400105988342
+    },
+    "factual:intervention->baseline": {
+      "metrics": {
+        "A": {
+          "auroc": 0.8327718752699318,
+          "bal_acc": 0.7489591431286171,
+          "auroc_lo": 0.7975339228776028,
+          "auroc_hi": 0.8682255287460703,
+          "bal_acc_lo": 0.7074988735019188,
+          "bal_acc_hi": 0.7868347113624254
+        },
+        "B_strict": {
+          "auroc": 0.8361060723849011,
+          "bal_acc": 0.7299386715038438,
+          "auroc_lo": 0.8004630624133459,
+          "auroc_hi": 0.8706954267370633,
+          "bal_acc_lo": 0.6917916581339677,
+          "bal_acc_hi": 0.7696751462296371
+        },
+        "B_recentred": {
+          "auroc": 0.8406495637902738,
+          "bal_acc": 0.7526388528979874,
+          "auroc_lo": 0.8063455489737703,
+          "auroc_hi": 0.8741723164894991,
+          "bal_acc_lo": 0.7144057025968695,
+          "bal_acc_hi": 0.7886326336702081
+        }
+      },
+      "spearman_strict": 0.9599173371498829,
+      "spearman_recentred": 0.9674898534721738,
+      "mean_score_A": 0.0847962523938091,
+      "mean_score_B_strict": 0.5539821924134203
+    }
+  }
+}

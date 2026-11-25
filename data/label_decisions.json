@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "what": "Question-level label decisions for the 500 factual questions, applied by src/probe/regrade.py.",
+    "how": "AI-assisted review (Claude) of results/probe_corrected/label_review.csv from round 1: question, gold answer, and the most common wrong (up to 4) and right (up to 2) sampled answers. Not checked by a second person.",
+    "blinding": "Committed before any probe was rerun on corrected labels. The review sheet has no probe output. The reviewer already knew the headline results of the original run, so this is only partly blind.",
+    "rules": "exclude: duplicate, undated/outdated, factually disputable, or not gradeable by string match, whether the model was graded right or wrong. accept_extra: same answer in other words. reject_if_contains: graded right only because the gold string happens to appear."
+  },
+  "exclude": {
+    "Q0283": "Duplicate of F15 with an outdated gold answer (Ban Ki-moon)",
+    "Q0500": "Undated current office-holder; outdated gold",
+    "Q0057": "Undated current head of state; outdated gold (Queen Elizabeth II)",
+    "Q0627": "Undated 'last athlete to'; outdated gold",
+    "Q0820": "Undated: the ram's-head logo moved from Dodge to Ram Trucks",
+    "Q0727": "Undated ('In May')",
+    "Q0780": "Underspecified (no person, government or date given)",
+    "Q0109": "Disputable gold (jawbone vs petrous temporal bone); graded right",
+    "Q0228": "Disputable: most common bird (domestic chicken vs wild species)",
+    "Q0843": "Ambiguous: borough vs island",
+    "Q0928": "Ambiguous: base of a Florentine (chocolate vs nuts and sugar)",
+    "Q0071": "Ambiguous: hewer (miner, stonecutter, woodcutter)",
+    "Q0029": "Ambiguous: steel vs sharpening stone",
+    "Q0676": "Flawed: Crete is not a country",
+    "Q0905": "Disputable: not the longest such word",
+    "Q0906": "Question is not meaningful",
+    "Q0684": "Several valid synonyms; gold is one obscure term",
+    "Q0024": "Open-ended; cannot be graded by string match"
+  },
+  "accept_extra": {
+    "Q0022": ["Buddhist"],
+    "Q0025": ["Austrian Alps"],
+    "Q0059": ["Wine steward"],
+    "Q0095": ["Beat Generation"],
+    "Q0305": ["Tibetan Plateau"],
+    "Q0344": ["Shell", "Shell-shaped"],
+    "Q0399": ["Cyclopes"],
+    "Q0490": ["Biafran Republic"],
+    "Q0522": ["1818", "1819", "1820", "1821", "1822", "1823", "1824", "1825", "1826", "1827", "1828", "1829", "1830", "1831", "1832", "1833", "1834", "1835", "1836", "1837", "1838", "1839", "1840", "1841", "1842", "1843", "1844", "1845", "1846", "1847", "1848"],
+    "Q0543": ["riots in Brixton"],
+    "Q0726": ["Ten duotrigintillion"],
+    "Q0735": ["Fringillidae"],
+    "Q0813": ["Birdman"],
+    "Q0899": ["Caucasian Mountains"],
+    "Q0936": ["illegal immigrants", "migrants"]
+  },
+  "reject_if_contains": {
+    "Q0166": ["Lance Corporal"],
+    "Q0208": ["Mozart"],
+    "Q0297": ["Jake Roper"],
+    "Q0941": ["Safety razor"]
+  }
+}

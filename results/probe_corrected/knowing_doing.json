@@ -1,0 +1,110 @@
+{
+  "n": 982,
+  "tool_call_rate": 0.955193482688391,
+  "tool_needed_rate": 0.5784114052953157,
+  "probe_says_needed_rate": 0.5366598778004074,
+  "four_cell_counts": {
+    "knows_does": 519,
+    "knows_doesnt": 8,
+    "unneeded_does": 419,
+    "neither": 36
+  },
+  "behavioural_mismatch_rate": 0.40325865580448067,
+  "probe_vs_necessity_mismatch_rate": 0.17006109979633402,
+  "probe_vs_action_mismatch_rate": 0.434826883910387,
+  "over_use": {
+    "definition": "tool_needed=0 and tool_called=1",
+    "n": 383,
+    "probe_says_not_needed": {
+      "n": 383,
+      "rate": 0.8407310704960835,
+      "lo": 0.8015665796344648,
+      "hi": 0.8773498694516968
+    }
+  },
+  "needed_and_called": {
+    "n": 555,
+    "probe_says_needed": {
+      "n": 555,
+      "rate": 0.8252252252252252,
+      "lo": 0.7927927927927928,
+      "hi": 0.8558558558558559
+    }
+  },
+  "under_use": {
+    "definition": "tool_needed=1 and tool_called=0",
+    "n": 13,
+    "probe_says_needed": {
+      "n": 13,
+      "rate": 0.46153846153846156,
+      "lo": 0.23076923076923078,
+      "hi": 0.6923076923076923
+    }
+  },
+  "not_needed_and_not_called": {
+    "n": 31,
+    "probe_says_not_needed": {
+      "n": 31,
+      "rate": 0.9354838709677419,
+      "lo": 0.8387096774193549,
+      "hi": 1.0
+    }
+  },
+  "not_needed_all": {
+    "definition": "tool_needed=0 (called or not)",
+    "n": 414,
+    "probe_says_not_needed": {
+      "n": 414,
+      "rate": 0.8478260869565217,
+      "lo": 0.8115942028985508,
+      "hi": 0.8816425120772947
+    }
+  },
+  "auroc_probe_vs_tool_called_within_not_needed": 0.6337067295544513,
+  "auroc_probe_vs_tool_called_within_needed": 0.7726957726957727,
+  "auroc_probe_vs_tool_needed": 0.9101772470572226,
+  "auroc_probe_vs_tool_called": 0.738272921108742,
+  "ece_vs_tool_needed": 0.03746189335842163,
+  "by_category": {
+    "arithmetic": {
+      "n": 500,
+      "tool_call_rate": 0.996,
+      "tool_needed_rate": 0.626,
+      "over_use_n": 185,
+      "over_use_probe_says_not_needed": {
+        "n": 185,
+        "rate": 0.918918918918919,
+        "lo": 0.8810810810810811,
+        "hi": 0.9567567567567568
+      },
+      "four_cell_counts": {
+        "knows_does": 293,
+        "knows_doesnt": 0,
+        "unneeded_does": 205,
+        "neither": 2
+      }
+    },
+    "factual": {
+      "n": 482,
+      "tool_call_rate": 0.9128630705394191,
+      "tool_needed_rate": 0.529045643153527,
+      "over_use_n": 198,
+      "over_use_probe_says_not_needed": {
+        "n": 198,
+        "rate": 0.7676767676767676,
+        "lo": 0.7070707070707071,
+        "hi": 0.8232323232323232
+      },
+      "four_cell_counts": {
+        "knows_does": 226,
+        "knows_doesnt": 8,
+        "unneeded_does": 214,
+        "neither": 34
+      }
+    }
+  },
+  "prompt": "baseline",
+  "feature": "last_token",
+  "threshold": 0.5,
+  "malformed_rate": 0.0010183299389002036
+}

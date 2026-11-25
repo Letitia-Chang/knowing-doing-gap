@@ -103,6 +103,7 @@ def main() -> None:
     p.add_argument("--n-jobs", type=int, default=-1)
     p.add_argument("--no-mean-pool", action="store_true", help="Skip the mean-pooled comparison representation")
     p.add_argument("--scopes", default="all,arithmetic,factual", help="Comma-separated subset of all,arithmetic,factual")
+    p.add_argument("--mean-pool-scopes", default="all", help="Scopes for the mean-pooled representation (its layer 0 is the averaged-input-embedding baseline)")
     p.add_argument("--limit", type=int, default=None, help="Use only the first N questions (smoke test)")
     args = p.parse_args()
 
@@ -123,9 +124,9 @@ def main() -> None:
     curve_rows, summaries = [], []
     for feature in features:
         arr = npz[feature][:, order, :]
-        # last_token is run for every scope; the mean-pool comparison only for the pooled scope.
+        # last_token is run for every scope; the mean-pool comparison only for the pooled scope by default.
         wanted = args.scopes.split(",")
-        scopes = [s for s in (["all", "arithmetic", "factual"] if feature == "last_token" else ["all"]) if s in wanted]
+        scopes = [s for s in (["all", "arithmetic", "factual"] if feature == "last_token" else args.mean_pool_scopes.split(",")) if s in wanted]
         for scope in scopes:
             idx = np.arange(len(y_all)) if scope == "all" else np.where(cat == scope)[0]
             y = y_all[idx]
@@ -144,7 +145,7 @@ def main() -> None:
                   f"null AUROC {np.mean(summary['null_nested_auroc']):.3f}  baselines { {k: round(v['auroc'], 3) for k, v in summary['baselines'].items()} }")
 
     pd.DataFrame(curve_rows).to_csv(outdir / f"probe_layer_curve{args.tag}.csv", index=False)
-    (outdir / f"probe_nested{args.tag}.json").write_text(json.dumps({"label_col": label_col, "label_threshold": args.label_threshold, "activations": args.activations, "results": summaries}, indent=2))
+    (outdir / f"probe_nested{args.tag}.json").write_text(json.dumps({"label_col": label_col, "label_threshold": args.label_threshold, "activations": Path(args.activations).name, "results": summaries}, indent=2))
     print(f"Saved probe results to {outdir}")
 
 

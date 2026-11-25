@@ -1,0 +1,144 @@
+{
+  "regrade": {
+    "n_questions": 1000,
+    "n_excluded": 18,
+    "n_kept": 982,
+    "kept_by_category": {
+      "arithmetic": 500,
+      "factual": 482
+    },
+    "questions_with_any_changed_grade": 36,
+    "needed_to_not_needed": [
+      "Q0022",
+      "Q0025",
+      "Q0026",
+      "Q0059",
+      "Q0095",
+      "Q0161",
+      "Q0211",
+      "Q0301",
+      "Q0319",
+      "Q0341",
+      "Q0344",
+      "Q0388",
+      "Q0393",
+      "Q0399",
+      "Q0402",
+      "Q0490",
+      "Q0522",
+      "Q0768",
+      "Q0787",
+      "Q0813",
+      "Q0821",
+      "Q0859",
+      "Q0899",
+      "Q0936"
+    ],
+    "not_needed_to_needed": [
+      "Q0941"
+    ],
+    "original30_label_changes": [],
+    "duplicate_questions": [
+      [
+        "F15",
+        "Q0283"
+      ]
+    ],
+    "n_extra_accept": 15
+  },
+  "scopes": {
+    "all": {
+      "original": {
+        "auroc": 0.8997633457183838,
+        "bal_acc": 0.8135069817400644,
+        "auroc_lo": 0.88211360424757,
+        "auroc_hi": 0.9161143928766251,
+        "bal_acc_lo": 0.7892946340005992,
+        "bal_acc_hi": 0.8376089064340451
+      },
+      "corrected": {
+        "auroc": 0.9101772308349609,
+        "bal_acc": 0.832363747703613,
+        "auroc_lo": 0.8911415278911591,
+        "auroc_hi": 0.9265224605798721,
+        "bal_acc_lo": 0.8068359055596948,
+        "bal_acc_hi": 0.8554064050372155
+      },
+      "corrected_surface_best": 0.787518286044771,
+      "corrected_embedding_layer0": {
+        "auroc": 0.8302969932556152,
+        "auroc_lo": 0.8025498151779175,
+        "auroc_hi": 0.8539841040968895
+      },
+      "corrected_null_auroc": [
+        0.49443337321281433,
+        0.4474531412124634
+      ],
+      "original_needed": 608,
+      "corrected_needed": 568,
+      "corrected_n": 982
+    },
+    "arithmetic": {
+      "original": {
+        "auroc": 0.9631989598274231,
+        "bal_acc": 0.8997454340434983,
+        "auroc_lo": 0.9482831314206124,
+        "auroc_hi": 0.9757861167192459,
+        "bal_acc_lo": 0.8720975843092507,
+        "bal_acc_hi": 0.9255606127047937
+      },
+      "corrected": {
+        "auroc": 0.963147759437561,
+        "bal_acc": 0.8997454340434983,
+        "auroc_lo": 0.9482115641236305,
+        "auroc_hi": 0.975769379734993,
+        "bal_acc_lo": 0.8720975843092507,
+        "bal_acc_hi": 0.9255606127047937
+      },
+      "corrected_surface_best": 0.9172404366916677,
+      "corrected_embedding_layer0": {
+        "auroc": 0.9360510110855103,
+        "auroc_lo": 0.9134720057249069,
+        "auroc_hi": 0.9553080022335052
+      },
+      "corrected_null_auroc": [
+        0.4528540372848511,
+        0.48542651534080505
+      ],
+      "original_needed": 313,
+      "corrected_needed": 313,
+      "corrected_n": 500
+    },
+    "factual": {
+      "original": {
+        "auroc": 0.8143364787101746,
+        "bal_acc": 0.7518809425382389,
+        "auroc_lo": 0.7743654280900956,
+        "auroc_hi": 0.8523700311779976,
+        "bal_acc_lo": 0.7140464438463091,
+        "bal_acc_hi": 0.7900319799026584
+      },
+      "corrected": {
+        "auroc": 0.8389738202095032,
+        "bal_acc": 0.7492010019866977,
+        "auroc_lo": 0.804203973710537,
+        "auroc_hi": 0.8724575087428093,
+        "bal_acc_lo": 0.7091533176002497,
+        "bal_acc_hi": 0.7883559178424767
+      },
+      "corrected_surface_best": 0.604673058650773,
+      "corrected_embedding_layer0": {
+        "auroc": 0.657113254070282,
+        "auroc_lo": 0.6065450116991997,
+        "auroc_hi": 0.7038967192173005
+      },
+      "corrected_null_auroc": [
+        0.44456249475479126,
+        0.4830094277858734
+      ],
+      "original_needed": 295,
+      "corrected_needed": 255,
+      "corrected_n": 482
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "config": {
+    "outdir": "probe_corrected",
+    "actdir": "probe",
+    "C": 0.001,
+    "splits": 20,
+    "seed": 0,
+    "n_jobs": 8
+  },
+  "cells": [
+    {
+      "prompt": "baseline",
+      "scope": "all",
+      "n": 982,
+      "n_needed": 568,
+      "n_called": 938,
+      "skipped": false,
+      "label_correlation_phi": 0.12410300445080218
+    },
+    {
+      "prompt": "baseline",
+      "scope": "arithmetic",
+      "n": 500,
+      "n_needed": 313,
+      "n_called": 498,
+      "skipped": true
+    },
+    {
+      "prompt": "baseline",
+      "scope": "factual",
+      "n": 482,
+      "n_needed": 255,
+      "n_called": 440,
+      "skipped": false,
+      "label_correlation_phi": 0.13587515359081337
+    },
+    {
+      "prompt": "intervention",
+      "scope": "all",
+      "n": 982,
+      "n_needed": 568,
+      "n_called": 599,
+      "skipped": false,
+      "label_correlation_phi": 0.3700744144173764
+    },
+    {
+      "prompt": "intervention",
+      "scope": "arithmetic",
+      "n": 500,
+      "n_needed": 313,
+      "n_called": 414,
+      "skipped": false,
+      "label_correlation_phi": 0.4253653684936597
+    },
+    {
+      "prompt": "intervention",
+      "scope": "factual",
+      "n": 482,
+      "n_needed": 255,
+      "n_called": 185,
+      "skipped": false,
+      "label_correlation_phi": 0.32585733973619735
+    }
+  ]
+}
