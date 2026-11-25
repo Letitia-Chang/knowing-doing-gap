@@ -104,6 +104,7 @@ knowing-doing-gap/
   run_probe.sh              # Probe extension runner: ./run_probe.sh [gpu|cpu|all]
   run_probe_corrected.sh    # Correction pass runner (CPU)
   requirements-probe.txt    # Extra dependencies for the probe extension
+  requirements-probe-lock.txt  # Exact versions behind the committed probe results (a record)
   results/
     metadata.json
     questions_labeled.json
@@ -441,7 +442,7 @@ Layers 14 and 28 are shown; [`directions.md`](results/probe_corrected/directions
 
 **Corrected run (`results/probe_corrected/`).** The probe stages ran twice on CPU nodes with different processors (Intel, then AMD). Labels and four-cell tables were identical, but the probe numbers were **not** bit-identical: values in the summary tables moved by at most about 0.001, one interval bound in a CSV by 0.006, and one near-tied peak layer from 19 to 18. Rounding differences between processors are the likely cause; that was not tested. Expect small differences on other hardware. The transfer and direction analyses have been run once.
 
-Reproducing a result says nothing about whether its labels are right. The scripts that compared the runs are not in this repo; to check for yourself, run `OUT=results_repro ./run_probe.sh` and diff the folder against `results/probe/`. The activation files have these SHA-256 hashes:
+The exact package versions and model revision are recorded in [`requirements-probe-lock.txt`](requirements-probe-lock.txt). Reproducing a result says nothing about whether its labels are right. The scripts that compared the runs are not in this repo; to check for yourself, run `OUT=results_repro ./run_probe.sh` and diff the folder against `results/probe/`. The activation files have these SHA-256 hashes:
 
 ```text
 715bf2d6ed634716d46870a3369b5477318b727e99c96236e804335d09117e3e  activations.npz
