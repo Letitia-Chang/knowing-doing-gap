@@ -366,9 +366,25 @@ Run info: model Qwen/Qwen2.5-7B-Instruct, precision bf16, GPU NVIDIA L40S, torch
 4. **A prompt change moves behavior but not the representation.** The intervention prompt lowers the call rate to 60.7%, and 348 questions flip from calling to not calling, while the probe's P(needed) for the same questions is nearly unchanged (Spearman 0.980; mean change on the flipped questions -0.008). Behavior also follows the probe more under this prompt (AUROC of the probe score for predicting tool calls 0.786 versus 0.623 under the baseline). The cost is under-use: needed-but-not-called questions grow from 23 to 166, and the probe says "needed" on 56% of those 166, the knowing-but-not-doing pattern.
 5. **Caveats that bear on how to read this:** the probes for the two prompts are trained separately; a probe shows what is decodable, not that the model uses it (no causal test was run); and the layer chosen by nested CV varies across folds (for the pooled probe it was spread over layers such as 24, 25 and 21), so there is no single "best layer".
 
+### Reproducibility check
+
+The committed results were reproduced twice from a fresh clone of `main` (commit `f7c9a8a`) after the original run:
+
+- **CPU stages only**, from the original activations and labels: every probe, knowing-doing and calibration CSV and `summary.md` came out byte-identical.
+- **The full pipeline, GPU stages included**, on a different NVIDIA L40S node: necessity labels, all sampled answers, tool-call decisions and both activation files were byte-identical to the original run, and so were the CSVs and `summary.md`.
+
+The only differences were recorded file paths, stage run times, and the last floating-point digit of three values in `summary.json`.
+
+What this does not show: both runs used the same GPU model, software environment, seed and batch sizes. Another GPU model, library version or batch size has not been tested and may not match bit for bit. Reproducing a result also says nothing about whether its labels are right (see the limitations below). The script that compared the two runs is not in this repo. To check for yourself, run `OUT=results_repro ./run_probe.sh` and diff the folder against `results/probe/`. The original activation files have these SHA-256 hashes:
+
+```text
+715bf2d6ed634716d46870a3369b5477318b727e99c96236e804335d09117e3e  activations.npz
+e2ba66138ff86606ed5e638f26b0194b7b4a09d3eb4fc15a57771a6850c1eb4d  activations_intervention.npz
+```
+
 ### Limitations
 
-- **Single model, single run.** Everything is about Qwen2.5-7B-Instruct with one seed set; nothing here generalizes to other models, and the paper's own results differ by model and by domain.
+- **Single model, single seed.** Everything is about Qwen2.5-7B-Instruct with one seed set; nothing here generalizes to other models, and the paper's own results differ by model and by domain.
 - **A probe is not a causal claim.** A linear probe shows that a necessity signal is *linearly decodable* from the representation. It does not show that the model uses that signal, and "the probe says not needed" does not prove the model "knew" in any deeper sense.
 - **The probe measures capability, not intent.** It is trained on the model-adaptive necessity label (could the model answer unaided), not on whether the model should have called a tool.
 - **Partly synthetic question set.** The arithmetic is generated from the paper's families; the factual gold answers come from TriviaQA and may contain errors or incomplete alias lists. Spot-check `gold_audit.csv`.
