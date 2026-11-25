@@ -20,10 +20,10 @@ Q0009,"Comedian, actor and director Melvin Kaminsky is better known by what name
 Q0010,In which Bond film does the villain's car turn into a small aeroplane to enable him to escape?,The Man With the Golden Gun,0,0,GoldenEye x10,,
 Q0011,Whose picture is on the US 20 dollar note?,Andrew Jackson,10,10,,Andrew Jackson x10,
 Q0014,The Bacillus Calmette-Guerin vaccine is used for immunisation against what?,Tuberculosis,10,10,,Tuberculosis x10,
-Q0022,The Tripitaka is a collection of whose religious teachings?,Buddha,0,0,Buddhist x6 || Buddhist teachings x4,,
+Q0022,The Tripitaka is a collection of whose religious teachings?,Buddha,0,10,,Buddhist x6 || Buddhist teachings x4,Buddhist
 Q0023,Mount Chimborazo is in which South American country?,Ecuador,10,10,,Ecuador x10,
 Q0024,The Miller-Urey experiment conducted in 1953 that simulated the conditions of the early days of Earth aimed to investigate what?,Chemical origins of life,0,0,The origin of organic compounds and potentially life on Earth. x2 || The origin of organic compounds and the potential mechanisms of chemical evolution leading x1 || The formation of organic compounds from inorganic molecules under conditions similar to ea x1 || The origins of organic molecules and the potential processes that led to the emergence of  x1,,
-Q0025,"""The musical """"The Sound of Music"""" is associated with which geographical area?""",Austria,9,9,Austrian Alps x1,Austria x9,
+Q0025,"""The musical """"The Sound of Music"""" is associated with which geographical area?""",Austria,9,10,,Austria x9 || Austrian Alps x1,Austrian Alps
 Q0026,Which wedding anniversary is celebrated with paper,1st,0,10,,First Wedding Anniversary x7 || First Anniversary x2,
 Q0027,Which optical toy was first patented in 1817 by David Brewster?,KALEIDOSCOPE,10,10,,Kaleidoscope x10,
 Q0028,In the Bible who was the mother of King Solomon?,Bathsheba,10,10,,Bathsheba x10,
@@ -42,7 +42,7 @@ Q0050,"John Lloyd Wright, son of famed architect Frank, invented what children's
 Q0055,The Cascades were one hit wonders in the U.K. what was the name of their one and only chart entry,Rhythm of the Rain,0,0,"""Read It and Weep"" x2 || Rainy Day Man x2 || Gotta Go Go x2 || Glad All Over x1",,
 Q0056,The Vectis National Party was a political party formed in 1967 which campaigned for crown dependency for which island?,Isle of Wight,8,8,Island of Jersey x2,Isle of Wight x4 || Island of Isle of Wight x3,
 Q0057,Who is Head of State of New Zealand?,Queen Elizabeth II,2,2,"The Head of State of New Zealand is the Governor-General, acting on behalf of the monarch  x3 || The Queen of New Zealand (currently King Charles III) is the Head of State, but the countr x1 || The Right Honourable Judith Collins, CMLG, MP x1 || The Head of State of New Zealand is the Governor-General, representing the monarch of New  x1","The Head of State of New Zealand is the Governor-General, currently Dame Jacqueline Adling x1 || The Head of State of New Zealand is the Queen of New Zealand, currently Queen Elizabeth II x1",
-Q0059,What name is given to the person in a restaurant responsible for the wine and assisting customers with their choice of wine?,Sommelier,0,0,Wine Steward x8 || Wine steward x2,,
+Q0059,What name is given to the person in a restaurant responsible for the wine and assisting customers with their choice of wine?,Sommelier,0,10,,Wine Steward x8 || Wine steward x2,Wine steward
 Q0060,"""Whose memoirs, published in 2010, were called """"A Journey""""?""",Tony Blair,0,0,Margaret Atwood x2 || Viktor E. Frankl x2 || Malala Yousafzai x2 || Vartan Gregorian x1,,
 Q0061,Who was the first Olympic heavyweight boxing gold medallist to become world professional heavyweight boxing champion?,(Joe) FRAZIER,0,0,Jack Dempsey x8 || Jack Sharkey x2,,
 Q0062,Author Thomas Hardy trained for which profession?,ARCHITECT,0,0,Law x4 || Lawyers x3 || Lawyer x2 || law x1,,
@@ -66,7 +66,7 @@ Q0089,"""What country's film industry is called """"Nollywood""""?""",Nigeria,10
 Q0090,"On June 4th 1979, Joe Clark became the 16th and youngest Prime Minister of which country?",Canada,10,10,,Canada x10,
 Q0093,Which country overtook the USA as the world's biggest emitter of CO2?,CHINA,10,10,,China x10,
 Q0094,The infamous drug cartel run by Pablo Escobar through the 1970s and 1980s takes its name from which Columbian city?,Medellín,10,10,,Medellín x10,
-Q0095,"Which anti-conformist movement in 1950's fashion began in New York's West Village and was characterised by black slim trousers , thick sweaters and untucked shirts ?",BEATNIK,0,0,The Beat Generation x10,,
+Q0095,"Which anti-conformist movement in 1950's fashion began in New York's West Village and was characterised by black slim trousers , thick sweaters and untucked shirts ?",BEATNIK,0,10,,The Beat Generation x10,Beat Generation
 Q0096,In which month of 1929 did the St Valentines Day massacre take place?,February,10,10,,February x10,
 Q0097,Which late British jockey’s autobiography is entitled ‘The Sport of Queens’?,Dick Francis,0,0,Sir Gordon Richards x10,,
 Q0098,The translation of Persian poems called The Rubaiyat of Omar Khayyam was the work of which 19th century English writer and poet?,Edward FitzGerald,10,10,,Edward FitzGerald x9 || Edward Fitzgerald x1,
@@ -101,7 +101,7 @@ Q0159,"In World War II, which company manufactured the 'Beaufighter'?",BRISTOL,1
 Q0161,Which Mexican dish is a steamed corn husk filled with meat or vegetables coated in masa dough?,Tamale,5,10,,Tamales x5 || Tamale x5,
 Q0163,Which artist was famed for his paintings of the water lilies in his garden?,CLAUDE MONET,10,10,,Claude Monet x10,
 Q0165,"In Jeff Wayne's 'Musical Version of Spartacus' released in 1992, which later Oscar-winning British actress sings the principal female role of Palene?",Catherine Zeta-Jones,0,0,Tara Fitzgerald x5 || Tamsin Greig x1 || Tatum O'Neal x1 || Tilda Swinton x1,,
-Q0166,"In the British military, a bombadier is equivalent to which other rank?",Corporal,1,1,Sergeant x9,Lance Corporal x1,
+Q0166,"In the British military, a bombadier is equivalent to which other rank?",Corporal,1,0,Sergeant x9 || Lance Corporal x1,,
 Q0168,Who plays Dr Nikki Alexander in the BBC’s crime drama Silent Witness?,Emilia Fox,0,0,Sian Gibson x1 || Rebecca Front x1 || Sian Brooke x1 || Sinead McEveety x1,,
 Q0169,"""""""Don't be evil"""" is the motto of which intemet company?""",Google,10,10,,Google x10,
 Q0170,‘The Darling Buds of May’ is set in which English county?,KENT,10,10,,Kent x10,
@@ -120,7 +120,7 @@ Q0199,"Which is the only English football team, in the top four divisions, to ha
 Q0201,Calvados apple brandy is traditionally produced in which country?,France,10,10,,France x10,
 Q0202,"Which palace, built by Cardinal Wolsey, was home to Henry 8th and is supposedly haunted by two of his wives?",Hampton Court,10,10,,Hampton Court Palace x3 || Cardinal's Lodge (now known as Hampton Court Palace) x1,
 Q0205,"September 9, 1969 saw what made an official language of Canada?",French,10,10,,English and French were officially recognized as Canada's bilingual languages. x3 || English and French were recognized as official languages of Canada. x2,
-Q0208,Who wrote the operas Oedipus Rex and The Rake's Progress?,Igor Stravinsky,9,9,Wolfgang Amadeus Mozart x1,"Wolfgang Amadeus Mozart and Igor Stravinsky x6 || Wolfgang Amadeus Mozart and Igor Stravinsky, respectively. x2",
+Q0208,Who wrote the operas Oedipus Rex and The Rake's Progress?,Igor Stravinsky,9,0,"Wolfgang Amadeus Mozart and Igor Stravinsky x6 || Wolfgang Amadeus Mozart and Igor Stravinsky, respectively. x2 || Wolfgang Amadeus Mozart x1 || Wolfgang Amadeus Mozart and Igor Stravinsky wrote the operas Oedipus Rex and The Rake's Pr x1",,
 Q0209,Who was Walter Mondale's running mate in the 1984 US Presidential Election?,Geraldine Ferraro,8,8,Walter Mondale's running mate in the 1984 US Presidential Election was Gary Hart. x1 || Walter Mondale's running mate in the 1984 US Presidential Election was Gerald Ford. x1,Walter Mondale's running mate in the 1984 US Presidential Election was Geraldine Ferraro. x7 || Geraldine Ferraro x1,
 Q0211,Vingt-et-Un is which number in English?,Twenty One,0,10,,Twenty-One x10,
 Q0213,"Jackpot Counter, Ghost Drop and Drop Zone are all terms used in which UK television game show?",Tipping Point,0,0,Deal or No Deal x2 || Spinner Slots x1 || The Million Pound Drop x1 || Spin-Off UK x1,,
@@ -170,11 +170,11 @@ Q0292,"In January 1973, who defeated Joe Frazier to win the Heavyweight World Bo
 Q0293,Which famous jewellers makes the Super Bowl Trophy?,Tiffany & Co.,0,0,Ralph Lauren x2 || Fabergé x2 || Rogers & Turner x1 || Rogers & Hammerstein x1,,
 Q0295,Which sportsman's autobiography is called Blessed?,George Best,0,0,Bono's autobiography is called Blessed. x4 || Barrack Obama x1 || Ian Paisley x1 || Tommy Flowers x1,,
 Q0296,Who plays the title character in the recent BBC TV series 'Sherlock'?,BENEDICT CUMBERBATCH,10,10,,Benedict Cumberbatch x10,
-Q0297,"""Charlie Sheen starred as which character in the TV series """"Two and a Half Men""""?""",Charlie,4,4,Jack Harper x3 || Jack Adler x1 || Jack Knight x1 || Alan Harper x1,"Charlie Sheen starred as Charlie Harper in the TV series ""Two and a Half Men."" x2 || Charlie Sheen starred as Jake Roper in the TV series ""Two and a Half Men"". x1",
+Q0297,"""Charlie Sheen starred as which character in the TV series """"Two and a Half Men""""?""",Charlie,4,3,"Jack Harper x3 || Jack Adler x1 || Jack Knight x1 || Charlie Sheen starred as Jake Roper in the TV series ""Two and a Half Men"". x1","Charlie Sheen starred as Charlie Harper in the TV series ""Two and a Half Men."" x2 || Jon Cryer's character's son, Charlie Harper x1",
 Q0301,What is the common name for the garden flower echinacea?,(PURPLE) CONEFLOWER,1,10,,Coneflower x9 || Purple Coneflower x1,
 Q0302,"The Battle of the Plains of Abraham in 1759, a pivotal battle in the Seven Years' War fought between the English and the French, is the only major confrontation ever to have taken place in what country?",Canada,10,10,,Canada x10,
 Q0303,"Who, along with the March Hare, throws a perpetual tea party in Lewis Caroll's Alice's Adventures in Wonderland?",Mad Hatter,10,10,,The Mad Hatter x9 || The Hatter (March Hare's friend) x1,Hatter (Alice's Adventures in Wonderland)
-Q0305,The Indus River flows the length of Pakistan and is Pakistan's main source of water for industry and drinking; where does it rise?,Tibet,7,7,The Indus River rises in the Tibetan Plateau. x2 || In the western Himalayas x1,The Indus River rises in Tibet. x6 || The Indus River rises in the Tibet Autonomous Region of China. x1,
+Q0305,The Indus River flows the length of Pakistan and is Pakistan's main source of water for industry and drinking; where does it rise?,Tibet,7,9,In the western Himalayas x1,The Indus River rises in Tibet. x6 || The Indus River rises in the Tibetan Plateau. x2,Tibetan Plateau
 Q0306,What is a measure of the disorder of a system?,Entropy,10,10,,Entropy x10,
 Q0307,The Tinta Barroca grape is chiefly used to make which drink?,Port,10,10,,Port wine x10,
 Q0309,Who first achieved stardom as the gangster Duke Mantee in the film 'The Petrified Forest'?,Humphrey Bogart,4,4,Wallace Ford x1 || Raoul Walsh x1 || John Garfield x1 || Willis O'Brien x1,Humphrey Bogart x4,
@@ -194,7 +194,7 @@ Q0337,'The Deep' is an aquarium at the confluence of which river with the Humber
 Q0340,In which sport is it forbidden for anyone to play left handed?,Polo,1,1,Boxing x5 || Cricket x1 || Golf x1 || Field Hockey x1,Polo x1,
 Q0341,"In Greek mythology, who was the mother of Perseus visited by Zeus disguised as a shower of gold?",DANAE,0,10,,Danaë x10,
 Q0343,In which US city do the basketball team known as the 'Trail Blazers' play their home games?,"PORTLAND, Oregon",10,10,,"Portland, Oregon x10",
-Q0344,What shape is the pasta known as ‘conchiglie’?,Sea Shells,0,0,Shell-shaped x10,,
+Q0344,What shape is the pasta known as ‘conchiglie’?,Sea Shells,0,10,,Shell-shaped x10,Shell
 Q0346,In which African country did the Mau Mau rebellion break out in October 1952 ?,KENYA,10,10,,Kenya x10,
 Q0350,"Born Natalia Zacharenko, under what name did she find fame?",Natalie Wood,0,0,Natalia Zvereva x4 || Natalia ZverevaNatalia Pervushina x2 || Natalia ZverevaNatalia Pervak x1 || Natalia ZverevaNatalia Petyuchenko x1,,
 Q0351,What kind of aircraft gave the space shuttle a piggy-back prior to 1981?,BOEING 747,10,10,,Boeing 747 x10,
@@ -220,7 +220,7 @@ Q0387,"""Who is a South African serial killer who committed the """"ABC Murders"
 Q0388,A frugivore feeds on what?,Fruit,4,10,,A frugivore feeds on fruits. x6 || Fruit x2,
 Q0393,"Mistral, chinook, zonda, and willy-willy are types of which planet Earth feature?",Winds,0,10,,wind x6 || Wind x2,
 Q0398,What is the name of the London Underground station in EastEnders?,Walford East,0,0,West Ham Underground Station x4 || Liverpool Street x2 || Lee Valley Park x1 || West India Docks Station x1,,
-Q0399,What name is given to the race of one-eyed giants of Greek mythology?,Cyclops,1,1,Cyclopes x9,Cyclops x1,
+Q0399,What name is given to the race of one-eyed giants of Greek mythology?,Cyclops,1,10,,Cyclopes x9 || Cyclops x1,Cyclopes
 Q0400,What is the highest mountain in the world not in a mountain range?,KILIMANJARO,0,0,Chimborazo x3 || Chamoli Peak x1 || Chullachaki Mountain x1 || Chamdo Peak x1,,
 Q0402,"Mallard, Mandarin, Red-crested Pochard, Teal, Muscovy and Eider are all types of what?",Duck,0,10,,Ducks x10,
 Q0403,Who founded the Jaguar motor company?,William Lyons,7,7,William Wilks and William Richard Hillman founded the Jaguar motor company. x1 || William Wilks x1 || William Walmsley x1,William Lyons x5 || Sir William Lyons x1,
@@ -255,7 +255,7 @@ Q0478,Which was the first US state to secede from the Union in December 1860; th
 Q0483,"In the series of films by Disney Pixar, Nemo is a clown-fish, what type of fish is his friend Dory?",Blue Tang,10,10,,Dory is a blue tang fish. x7 || Blue tang x3,
 Q0485,"Which ‘P’ was the last king of Troy, according to Greek mythology?",PRIAM,6,6,Paris x3 || Pandarus x1,Priam x6,
 Q0488,"From 1791 to 1803, Toussaint L’Ouverture led a revolt against France on which island?",Haiti,10,10,,Haiti x10,
-Q0490,What was the name of the short-lived republic that existed in south-eastern Nigeria between 1967 and 1970?,BIAFRA,9,9,Biafran Republic x1,Republic of Biafra x8 || Biafra x1,
+Q0490,What was the name of the short-lived republic that existed in south-eastern Nigeria between 1967 and 1970?,BIAFRA,9,10,,Republic of Biafra x8 || Biafra x1,Biafran Republic
 Q0491,"George Bush, American president 2001 to 2009, had what middle name?",WALKER,8,8,Walkway x1 || Walken x1,Walker x8,
 Q0496,"What successful, no-frills airline is headquartered at Love Field in Dallas, and is one of the few that doesn't charge a baggage handling fee?",Southwest,6,6,Spirit Airlines x3 || Republic Airways x1,Southwest Airlines x6,
 Q0499,Against which state did Athens fight the 'Peloponnesian Wars'?,SPARTA,10,10,,Sparta x10,
@@ -268,7 +268,7 @@ Q0513,Who composed the opera Turandot?,Puccini,10,10,,Giacomo Puccini x10,
 Q0515,In which country does The Girl From Ipanema live,Brazil,10,10,,Brazil x10,
 Q0517,Which English football club play their home games at Craven Cottage?,Fulham FC,10,10,,Fulham Football Club x8 || Fulham FC x2,Fulham Football Club
 Q0519,Which fruit is traditionally used in the recipe for the dessert dish Liverpool Tart?,LEMON,6,6,Apple x4,Lemon x6,
-Q0522,Give a year in the life of Emily Bronte.,1818-1848,0,0,1845 x4 || 1847 x3 || 1848 x2 || 1846 x1,,
+Q0522,Give a year in the life of Emily Bronte.,1818-1848,0,10,,1845 x4 || 1847 x3,1845; 1846; 1847; 1848
 Q0524,In which stretch of water did the Mary Rose actually sink,The Solent,10,10,,Solent Strait x9 || Solent x1,
 Q0526,"If you travelled down the Missouri River from Bismarck, North Dakota, which city would you be in when you reached the ocean?",New Orleans,0,0,"St. Louis, Missouri x9 || St. Louis x1",,
 Q0528,Taphophobia is the fear of being what?,Buried alive,10,10,,being buried alive x10,
@@ -279,7 +279,7 @@ Q0538,The King of which fictional country is drugged on the eve of his coronatio
 Q0539,"Fleurie, Morgon and Brouilly are wines from which French wine region?",BEAUJOLAIS,6,6,Côte de Bordeaux x3 || Côte de Bourgogne x1,Beaujolais x6,
 Q0541,Name the tv series about FBI agent Don Eppes and his mathematical genius brother Charlie,Numb3rs,10,10,,Numb3rs x10,
 Q0542,Where are New Zealand's parliament buildings?,Wellington,10,10,,Wellington x10,
-Q0543,Which famous London events which occurred between April 10th and April 12th 1981 were dealt with in the Scarman report?,BRIXTON RIOTS,3,3,"Notable events in Liverpool included the Broad Street Riot and disturbances following the  x1 || The Scarman report addressed the riots in Brixton that occurred on April 10-12, 1981. x1 || The Scarman report dealt with the riots in Brixton, London, which occurred on April 10th,  x1 || The Scarman report dealt with the riots following the death of Michael Lawrence during a p x1",Brixton riots x2 || The Scarman report addressed the Brixton riots that took place from April 10th to April 12 x1,
+Q0543,Which famous London events which occurred between April 10th and April 12th 1981 were dealt with in the Scarman report?,BRIXTON RIOTS,3,5,Notable events in Liverpool included the Broad Street Riot and disturbances following the  x1 || The Scarman report dealt with the riots following the death of Michael Lawrence during a p x1 || The Scarman report dealt with the riots following the death of Anthony Bryan at the hands  x1 || The Scarman report dealt with the riots following the death of Michael Lawrence during dis x1,"Brixton riots x2 || The Scarman report addressed the riots in Brixton that occurred on April 10-12, 1981. x1",riots in Brixton
 Q0544,"Which fictional character is the subject of George Frampton’s bronze statue in Kensington Gardens, London?",Peter Pan,10,10,,Peter Pan x10,
 Q0545,What is the name of the official British coronation crown?,St Edward’s Crown,1,1,The Imperial State Crown x7 || The official British coronation crown is called the Imperial State Crown. x1 || The Crown Imperial x1,The St. Edward's Crown x1,
 Q0547,What is the main attraction at both Altamira and Lascaux?,Cave paintings,10,10,,Cave paintings x10,
@@ -365,12 +365,12 @@ Q0718,Football. In which decade of the 20th century did the white ball come into
 Q0719,"Inspiring such things as a television program, a breakfast cereal, and hit song, what immensely popular video game was first released by Namco on May 22, 1980?",Pac-Man,10,10,,Pac-Man x10,
 Q0723,British-born American film actor Archibald Alec Leach was better known by which stage name?,Cary Grant,2,2,Fred Astaire x3 || Jerry Lewis x2 || -columns x1 || Monty Python x1,"Stanley Holloway (incorrect, correct answer is Cary Grant) x1 || Ernie Lawrence, but more commonly known as Cary Grant x1",
 Q0725,Who was Don McLean singing about in Vincent,Vincent Van Gogh,10,10,,Vincent van Gogh x10,
-Q0726,The number ten raised to the power of one hundred is known by what name?,Googol,0,0,Ten duotrigintillion x6 || Ten duodecillion x2 || One hundred decillion x1 || Ten ducentillion x1,,
+Q0726,The number ten raised to the power of one hundred is known by what name?,Googol,0,6,Ten duodecillion x2 || One hundred decillion x1 || Ten ducentillion x1,Ten duotrigintillion x6,Ten duotrigintillion
 Q0727,"In May, in which US state were three kidnapped women discovered and freed?",Ohio,0,0,Utah x5 || Michigan x3 || Georgia x1 || New Jersey x1,,
 Q0729,"Which battle, near York, in 1644, saw the end of 'Royalist' resistance in the north of England?",MARSTON MOOR,10,10,,Battle of Marston Moor x7 || Marston Moor x1,
 Q0732,"Graca Machel, the widow of a President of Mozambique, is the wife of which famous man?",Nelson Mandela,10,10,,Nelson Mandela x10,
 Q0734,In which country are the wine areas of Suhindol and Thrace?,Bulgaria,3,3,Greece x7,Bulgaria x3,
-Q0735,To which family of birds do Linnets belong?,Finches,0,0,Cardinalidae x7 || Fringillidae x3,,
+Q0735,To which family of birds do Linnets belong?,Finches,0,3,Cardinalidae x7,Fringillidae x3,Fringillidae
 Q0736,Which Kent brewer is believed to be the oldest continuous brewer in the country?,SHEPHERD NEAME,0,0,Adnams x7 || Adnam's Brewery x2 || Adnes Brewery x1,,
 Q0737,What U.S. state borders four Great Lakes?,Michigan,10,10,,Michigan x10,
 Q0740,"What was the name of the Roman road that stretched from Dover, Kent, almost to Shrewsbury, Shropshire, a distance of 322 km (200 miles)?",Watling Street,0,0,Via Devana x5 || Via Catena x1 || ViaAGMA x1 || Viastrandia x1,,
@@ -411,7 +411,7 @@ Q0805,Which colour scores the most on an archery target,Gold,0,0,Red x9 || Black
 Q0806,Greek philosopher Socrates was sentenced to death by drinking which kind of poison ?,HEMLOCK,10,10,,hemlock x10,
 Q0808,Which American singer was born Eleanora Fagan?,Billie Holiday,10,10,,Billie Holiday x10,
 Q0812,What was Sweeney Todd's occupation in Stephen Sondheim's work?,Barber,10,10,,Barber x5 || Sweeney Todd was a barber. x3,
-Q0813,By what nickname was the American prisoner Robert Franklin Stroud better known?,'THE BIRDMAN OF ALCATRAZ',9,9,Birdman x1,Birdman of Alcatraz x9,
+Q0813,By what nickname was the American prisoner Robert Franklin Stroud better known?,'THE BIRDMAN OF ALCATRAZ',9,10,,Birdman of Alcatraz x9 || Birdman x1,Birdman
 Q0814,'London Is The Place For Me' which was sung by Lord Kitchener as he disembarked from the 'MV Empire Windrush' in 1951 is what type of song?,CALYPSO,0,0,Jazz standard x3 || Ballad x2 || Standard x1 || Jazz标准曲 x1,,
 Q0815,"""What did Shylock ask for a pound of in """"The Merchant of Venice""""?""",Flesh,10,10,,A pound of Antonio's flesh. x6 || a pound of flesh x3,
 Q0818,Which British swimmer won Olympic Gold Medals in 2008 in the 400 and 800 m freestyle?,Rebecca Adlington,0,0,Andrew Mullen x2 || Andrew Turpin x2 || Henry Cavendish x1 || Andrew Turvey x1,,
@@ -457,7 +457,7 @@ Q0894,"Without this man, born on May 12th, 1937, we would never know ""Seven Wor
 Q0895,"""Which composer wrote the musical for the 18th-century opera, """"Idomeneo""""?""",Wolfgang Amadeus Mozart,10,10,,Wolfgang Amadeus Mozart x10,
 Q0896,Bosworth cheese comes from which English county?,Staffordshire,0,0,Leicestershire x9 || Nottinghamshire x1,,
 Q0897,The thoroughfare where fictional Sweeny Todd had his barber shop?,Fleet Street,6,6,Baker Street x3 || Clink Street x1,Fleet Street x5 || Sweeney Todd had his barber shop on Fleet Street. x1,
-Q0899,"Mount Elbrus, arguably Europe's highest peak, is in which mountain range?",Caucasus,9,9,Caucasian Mountains x1,Caucasus Mountains x8 || Caucasus Mountain Range x1,
+Q0899,"Mount Elbrus, arguably Europe's highest peak, is in which mountain range?",Caucasus,9,10,,Caucasus Mountains x8 || Caucasian Mountains x1,Caucasian Mountains
 Q0900,What is the name of the perfume launched by British boyband JLS in January 2013?,Love,0,0,JLS Men x6 || JLS for Men x2 || JLS Wanted Man x1 || JLS Fragrance x1,,
 Q0901,"What 1859 historical novel contains chapters called 'Knitting', 'Still Knitting' and 'The Knitting Done'?",A TALE OF TWO CITIES,0,0,Middlemarch by George Eliot x7 || Wuthering Heights x2 || Middlemarch x1,,
 Q0902,"Apart from London, in which other British city is there a Charing Cross?",Glasgow,0,0,Edinburgh x10,,
@@ -477,12 +477,12 @@ Q0928,Of what does the usual base of a Florentine biscuit consist?,CHOCOLATE,0,0
 Q0929,What planets orbit takes it the furthest away from the sun?,Neptune,6,6,Nemesis x2 || Pluto x2,Neptune x6,
 Q0930,"""Which Scottish actor, born in Paisley, starred in the movies """"300"""", """"Law Abiding Citizen"""" and """"P.S. I love you"""" ?""",GERARD BUTLER,3,3,Patrick Wilson x2 || Aaron Eckhart x1 || Tim Roth x1 || Jack Davenport x1,Gerard Butler x3,
 Q0932,"Who first identified and isolated nucleic acids, the precursor to identifying DNA?",Friedrich Miescher,10,10,,Friedrich Miescher first identified and isolated nucleic acids in 1869. x7 || Friedrich Miescher first identified and isolated nucleic acids in the 1860s. x2,
-Q0936,"A ""coyote"" is a slang term used to describe someone who smuggles what across the U.S. border?",People,0,0,illegal immigrants x9 || migrants x1,,
+Q0936,"A ""coyote"" is a slang term used to describe someone who smuggles what across the U.S. border?",People,0,10,,illegal immigrants x9 || migrants x1,illegal immigrants; migrants
 Q0937,The French town of Bordeaux lies on which river?,The Garonne River,0,0,Dordogne x9 || Dordogne River x1,,
 Q0938,"Which jockey, later famous in another sphere, rode Devon Loch in the 1956 Grand National?",DICK FRANCIS,0,0,Johnny Capel x3 || Jimmy Twoey x1 || Leslie Returned x1 || Nat L失礼介します x1,,
 Q0939,"In 1934, local miners in Ashington, Northumberland, formed a group to study what?",ART,0,0,mining safety practices x3 || Miners' Educational Association x3 || The miners formed a group to study pithead baths and workers' welfare. x1 || To study the mining industry and improve working conditions. x1,,
 Q0940,"What dish, especially popular in parts of Wales and the English Midlands, is traditionally made from pig's heart, liver and fatty belly meat or bacon minced together, with herbs added for flavouring and sometimes bread crumbs",Faggots,0,0,Cawl x10,,
-Q0941,What invention by a Mr Schick in 1931 might be said to have changed the face of man ?,ELECTRIC RAZOR,10,10,,Schick Safety Razor x5 || Schick safety razor x3,Razor
+Q0941,What invention by a Mr Schick in 1931 might be said to have changed the face of man ?,ELECTRIC RAZOR,10,2,Schick Safety Razor x5 || Schick safety razor x3,Electric razor x2,
 Q0943,"Who was born at Villa Mon Repos, Corfu, in 1921?",Prince Philip,0,0,"Ezra Pound x4 || Evelyn Waugh x2 || Vergina Wang Guang'ai x1 || Elizabeth, Queen of the United Kingdom and the Commonwealth Realms x1",,
 Q0944,"111,111,111 squared gives what result?","12,345,678,987,654,321",1,1,"123456789 x5 || 12,345,678,901 x3 || 12,345,678,900 x1","12,345,678,987,654,321 x1",
 Q0946,"Who played Patrick, Victor Meldrew's neighbour in One Foot in the Grave",Angus Deayton,0,0,Roger Bowdler x1 || Peter Sallis x1 || Mark McNeilly x1 || Clive Anderson x1,,

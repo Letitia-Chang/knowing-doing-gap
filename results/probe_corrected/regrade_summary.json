@@ -1,28 +1,41 @@
 {
   "n_questions": 1000,
-  "n_excluded": 0,
-  "n_kept": 1000,
+  "n_excluded": 18,
+  "n_kept": 982,
   "kept_by_category": {
     "arithmetic": 500,
-    "factual": 500
+    "factual": 482
   },
-  "questions_with_any_changed_grade": 17,
+  "questions_with_any_changed_grade": 36,
   "needed_to_not_needed": [
+    "Q0022",
+    "Q0025",
     "Q0026",
+    "Q0059",
+    "Q0095",
     "Q0161",
     "Q0211",
     "Q0301",
     "Q0319",
     "Q0341",
+    "Q0344",
     "Q0388",
     "Q0393",
+    "Q0399",
     "Q0402",
+    "Q0490",
+    "Q0522",
     "Q0768",
     "Q0787",
+    "Q0813",
     "Q0821",
-    "Q0859"
+    "Q0859",
+    "Q0899",
+    "Q0936"
   ],
-  "not_needed_to_needed": [],
+  "not_needed_to_needed": [
+    "Q0941"
+  ],
   "original30_label_changes": [],
   "duplicate_questions": [
     [
@@ -30,5 +43,5 @@
       "Q0283"
     ]
   ],
-  "n_extra_accept": 0
+  "n_extra_accept": 15
 }
