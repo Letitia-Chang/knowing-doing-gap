@@ -30,11 +30,11 @@ def candidates(q: dict, accept: dict, extra: dict) -> list[str]:
     return [str(q["reference_answer"]), *base, *extra.get(q["id"], [])]
 
 
-def regrade_question(q: dict, answers: list[str], cands: list[str]) -> tuple[list[bool], list[str | None]]:
+def regrade_question(q: dict, answers: list[str], cands: list[str], reject: list[str] | None = None) -> tuple[list[bool], list[str | None]]:
     if q["category"] == "arithmetic":
         flags = [grade_arithmetic(a, str(q["reference_answer"])) for a in answers]
         return flags, [None] * len(answers)
-    via = [match_factual(a, cands) for a in answers]
+    via = [None if reject and match_factual(a, reject) else match_factual(a, cands) for a in answers]
     return [v is not None for v in via], via
 
 
@@ -55,14 +55,14 @@ def main() -> None:
 
     accept = read_json(args.accept)
     dec = read_json(args.decisions) if Path(args.decisions).exists() else {}
-    exclude, extra = dec.get("exclude", {}), dec.get("accept_extra", {})
+    exclude, extra, reject = dec.get("exclude", {}), dec.get("accept_extra", {}), dec.get("reject_if_contains", {})
     runs = {r["id"]: r for r in read_json(indir / "necessity_runs_local.json")}
     old = {q["id"]: q for q in load_questions(indir / "questions_probe_labeled.json")}
 
     labeled, changes, review = [], [], []
     for q in load_questions(args.questions):
         answers = runs[q["id"]]["answers"]
-        flags, via = regrade_question(q, answers, candidates(q, accept, extra))
+        flags, via = regrade_question(q, answers, candidates(q, accept, extra), reject.get(q["id"]))
         lab = necessity_labels(sum(flags), len(flags))
         o = old[q["id"]]
         if flags != runs[q["id"]]["correct"]:

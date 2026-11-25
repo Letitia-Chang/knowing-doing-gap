@@ -1,0 +1,34 @@
+{
+  "n_questions": 1000,
+  "n_excluded": 0,
+  "n_kept": 1000,
+  "kept_by_category": {
+    "arithmetic": 500,
+    "factual": 500
+  },
+  "questions_with_any_changed_grade": 17,
+  "needed_to_not_needed": [
+    "Q0026",
+    "Q0161",
+    "Q0211",
+    "Q0301",
+    "Q0319",
+    "Q0341",
+    "Q0388",
+    "Q0393",
+    "Q0402",
+    "Q0768",
+    "Q0787",
+    "Q0821",
+    "Q0859"
+  ],
+  "not_needed_to_needed": [],
+  "original30_label_changes": [],
+  "duplicate_questions": [
+    [
+      "F15",
+      "Q0283"
+    ]
+  ],
+  "n_extra_accept": 0
+}

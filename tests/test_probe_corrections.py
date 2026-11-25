@@ -84,3 +84,21 @@ def test_boot_diff_sign_and_interval():
     x = np.r_[np.ones(50), np.zeros(50)] + np.random.default_rng(0).normal(scale=0.1, size=100)
     r = boot_diff(x, np.arange(100) < 50, n_boot=200)
     assert r["lo"] < r["diff"] < r["hi"] and r["lo"] > 0.8
+
+
+def test_reject_rule_overrides_a_match():
+    q = {"id": "Q0941", "category": "factual", "reference_answer": "ELECTRIC RAZOR", "accept": []}
+    flags, _ = regrade_question(q, ["Schick Safety Razor", "Electric razor"], ["ELECTRIC RAZOR", "Razor"], ["Safety razor"])
+    assert flags == [False, True]
+
+
+def test_label_decisions_refer_to_real_factual_questions_and_do_not_conflict():
+    import json
+    from pathlib import Path
+
+    data = Path(__file__).resolve().parent.parent / "data"
+    dec = json.loads((data / "label_decisions.json").read_text())
+    cat = {q["id"]: q["category"] for q in json.loads((data / "questions_probe.json").read_text())["questions"]}
+    groups = [set(dec[k]) for k in ("exclude", "accept_extra", "reject_if_contains")]
+    assert all(cat[i] == "factual" for g in groups for i in g)
+    assert not (groups[0] & groups[1]) and not (groups[0] & groups[2]) and not (groups[1] & groups[2])
